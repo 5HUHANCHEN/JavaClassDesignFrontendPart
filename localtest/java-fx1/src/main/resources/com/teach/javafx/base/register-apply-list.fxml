@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.teach.javafx.controller.base.RegisterApplyController"
+            styleClass="audit-root">
+
+
+    <top>
+        <VBox spacing="0">
+            <children>
+                <StackPane styleClass="top-banner">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="18">
+                            <children>
+                                <VBox spacing="6">
+                                    <children>
+                                        <Label text="账号申请审核中心" styleClass="page-title"/>
+                                        <Label text="教师 / 管理员申请统一审核入口，支持筛选、刷新、通过与拒绝操作" styleClass="page-subtitle"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </StackPane>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="18" style="-fx-padding: 22;">
+            <children>
+
+                <!-- 顶部统计卡片 -->
+                <HBox spacing="18">
+                    <children>
+                        <VBox prefWidth="220" spacing="8" styleClass="stat-card stat-pending">
+                            <children>
+                                <Label text="待审核申请" styleClass="stat-title"/>
+                                <Label fx:id="pendingCountLabel" text="0" styleClass="stat-number"/>
+                                <Label text="Waiting for review" styleClass="stat-desc"/>
+                            </children>
+                        </VBox>
+
+                        <VBox prefWidth="220" spacing="8" styleClass="stat-card stat-approved">
+                            <children>
+                                <Label text="已通过申请" styleClass="stat-title"/>
+                                <Label fx:id="approvedCountLabel" text="0" styleClass="stat-number"/>
+                                <Label text="Approved requests" styleClass="stat-desc"/>
+                            </children>
+                        </VBox>
+
+                        <VBox prefWidth="220" spacing="8" styleClass="stat-card stat-rejected">
+                            <children>
+                                <Label text="已拒绝申请" styleClass="stat-title"/>
+                                <Label fx:id="rejectedCountLabel" text="0" styleClass="stat-number"/>
+                                <Label text="Rejected requests" styleClass="stat-desc"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- 查询卡片 -->
+                <VBox spacing="14" styleClass="neo-card">
+                    <children>
+                        <Label text="筛选条件" styleClass="section-title"/>
+
+                        <HBox spacing="14" alignment="CENTER_LEFT">
+                            <children>
+                                <VBox spacing="6">
+                                    <children>
+                                        <Label text="关键词" styleClass="field-label"/>
+                                        <TextField fx:id="keywordField"
+                                                   promptText="输入用户名 / 姓名"
+                                                   styleClass="neo-input"/>
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="6">
+                                    <children>
+                                        <Label text="审核状态" styleClass="field-label"/>
+                                        <ComboBox fx:id="statusComboBox"
+                                                  prefWidth="180"
+                                                  styleClass="neo-combo"/>
+                                    </children>
+                                </VBox>
+
+                                <HBox spacing="12" alignment="BOTTOM_LEFT">
+                                    <children>
+                                        <Button text="查询"
+                                                onAction="#onQueryButtonClick"
+                                                styleClass="neo-btn-primary"/>
+                                        <Button text="刷新"
+                                                onAction="#onRefreshButtonClick"
+                                                styleClass="neo-btn-info"/>
+                                        <Button text="重置"
+                                                onAction="#onResetButtonClick"
+                                                styleClass="neo-btn-light"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- 表格卡片 -->
+                <VBox spacing="14" VBox.vgrow="ALWAYS" styleClass="neo-card">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <children>
+                                <Label text="申请列表" styleClass="section-title"/>
+                                <Label fx:id="countLabel" text="共 0 条记录" styleClass="count-label"/>
+                            </children>
+                        </HBox>
+
+                        <TableView fx:id="applyTable" VBox.vgrow="ALWAYS" styleClass="audit-table">
+                            <columns>
+                                <TableColumn fx:id="applyIdColumn" text="申请ID" prefWidth="90"/>
+                                <TableColumn fx:id="usernameColumn" text="用户名" prefWidth="120"/>
+                                <TableColumn fx:id="nameColumn" text="姓名" prefWidth="110"/>
+                                <TableColumn fx:id="roleColumn" text="角色" prefWidth="110"/>
+                                <TableColumn fx:id="deptColumn" text="院系" prefWidth="140"/>
+                                <TableColumn fx:id="phoneColumn" text="电话" prefWidth="120"/>
+                                <TableColumn fx:id="emailColumn" text="邮箱" prefWidth="180"/>
+                                <TableColumn fx:id="applyTimeColumn" text="申请时间" prefWidth="170"/>
+                                <TableColumn fx:id="statusColumn" text="状态" prefWidth="100"/>
+                                <TableColumn fx:id="reasonColumn" text="申请原因" prefWidth="220"/>
+                                <TableColumn fx:id="actionColumn" text="操作" prefWidth="240"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <!-- 底部操作卡片 -->
+                <VBox spacing="14" styleClass="neo-card">
+                    <children>
+                        <Label text="审核操作" styleClass="section-title"/>
+
+                        <HBox spacing="14" alignment="CENTER_LEFT">
+                            <children>
+                                <Button text="审核通过"
+                                        onAction="#onApproveButtonClick"
+                                        styleClass="neo-btn-success"/>
+                                <Button text="审核拒绝"
+                                        onAction="#onRejectButtonClick"
+                                        styleClass="neo-btn-danger"/>
+                                <Button text="查看详情"
+                                        onAction="#onViewDetailButtonClick"
+                                        styleClass="neo-btn-light"/>
+                            </children>
+                        </HBox>
+
+                        <Label text="提示：双击表格行可快速查看详情，未审核记录支持表格内直接操作。"
+                               styleClass="hint-label"/>
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

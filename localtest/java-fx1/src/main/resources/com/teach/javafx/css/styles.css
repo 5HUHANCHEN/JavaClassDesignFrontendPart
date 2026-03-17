@@ -1,0 +1,86 @@
+/* =========================================
+   全局样式重置
+   ========================================= */
+.root {
+    -fx-font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================
+   导航按钮样式 (修复 FXML 报错的关键)
+   ========================================= */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #555555;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER-LEFT;
+    -fx-content-display: LEFT;
+    -fx-text-overrun: CLIP;
+
+    /* 添加平滑过渡效果 */
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* 鼠标悬停状态 (替代原来的 onMouseEntered) */
+.nav-button:hover {
+    -fx-background-color: #1976D2; /* 蓝色背景 */
+    -fx-text-fill: WHITE;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(25, 118, 210, 0.4), 10, 0, 0, 2);
+}
+
+/* 鼠标按下状态 */
+.nav-button:armed {
+    -fx-background-color: #1565C0;
+    -fx-text-fill: WHITE;
+}
+
+/* 聚焦状态 (可选) */
+.nav-button:focused {
+    -fx-border-color: #1976D2;
+    -fx-border-width: 2;
+    -fx-border-insets: -2;
+}
+
+/* =========================================
+   表格按钮样式 (保存/删除按钮)
+   ========================================= */
+.table-action-btn {
+    -fx-font-size: 12px;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-padding: 4 10;
+    -fx-min-width: 60px;
+}
+
+.table-action-btn.save {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: WHITE;
+}
+.table-action-btn.save:hover {
+    -fx-background-color: #1976D2;
+}
+
+.table-action-btn.delete {
+    -fx-background-color: #F44336;
+    -fx-text-fill: WHITE;
+}
+.table-action-btn.delete:hover {
+    -fx-background-color: #D32F2F;
+}
+
+/* =========================================
+   状态栏样式
+   ========================================= */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 4;
+}

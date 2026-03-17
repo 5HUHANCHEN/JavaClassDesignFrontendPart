@@ -1,0 +1,40 @@
+.apply-root {
+    -fx-background-color: linear-gradient(to bottom right, #eaf2ff, #dbeafe);
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.apply-card {
+    -fx-padding: 28;
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 16, 0.25, 0, 4);
+}
+
+.neo-input {
+    -fx-pref-width: 320;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #cbd5f5;
+}
+
+.neo-combo {
+    -fx-pref-width: 320;
+}
+
+.neo-btn-primary {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+}
+
+.neo-btn-light {
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 12;
+}

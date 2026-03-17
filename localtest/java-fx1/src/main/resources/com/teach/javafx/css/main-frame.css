@@ -1,0 +1,663 @@
+/* =========================
+   主背景
+   ========================= */
+
+.main-root {
+    -fx-background-color:
+            radial-gradient(center 20% 20%, radius 100%, rgba(255,255,255,0.95), rgba(227,236,248,0.9)),
+            linear-gradient(to bottom right, #eef3fb, #dce7f8);
+
+    -fx-font-family: "Microsoft YaHei UI";
+}
+
+
+/* =========================
+   顶部区域
+   ========================= */
+
+.top-area {
+    -fx-background-color: transparent;
+}
+
+/* 顶部标题卡片 */
+
+.header-card {
+
+    -fx-background-color:
+            linear-gradient(to right, #3b82f6, #2563eb);
+
+    -fx-background-radius: 22;
+
+    -fx-padding: 18 22 18 22;
+
+    -fx-effect:
+            dropshadow(gaussian, rgba(37,99,235,0.35), 24, 0.28, 0, 6);
+}
+
+
+/* 系统标题 */
+
+.app-title {
+
+    -fx-font-size: 26px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: white;
+}
+
+.app-subtitle {
+
+    -fx-font-size: 12px;
+
+    -fx-text-fill: rgba(255,255,255,0.85);
+}
+
+.small-label {
+
+    -fx-text-fill: white;
+
+    -fx-font-size: 12px;
+}
+
+
+/* 退出按钮 */
+
+.logout-button {
+
+    -fx-background-color:
+            linear-gradient(to bottom right, #fb7185, #e11d48);
+
+    -fx-text-fill: white;
+
+    -fx-background-radius: 18;
+
+    -fx-padding: 8 18 8 18;
+
+    -fx-font-weight: bold;
+
+    -fx-cursor: hand;
+
+    -fx-effect:
+            dropshadow(gaussian, rgba(225,29,72,0.35), 12, 0.28, 4, 4);
+}
+
+.logout-button:hover {
+
+    -fx-background-color:
+            linear-gradient(to bottom right, #ff8798, #ef2f5a);
+}
+
+
+
+/* =========================
+   菜单栏
+   ========================= */
+
+.menubar-card {
+
+    -fx-background-color: rgba(255,255,255,0.85);
+
+    -fx-background-radius: 18;
+
+    -fx-padding: 6 10 6 10;
+
+    -fx-effect:
+            dropshadow(gaussian, rgba(163,177,198,0.45), 14, 0.28, 0, 4);
+}
+
+.menu-bar {
+
+    -fx-background-color: transparent;
+}
+
+
+/* =========================
+   左侧导航
+   ========================= */
+
+.left-area {
+
+    -fx-background-color: transparent;
+}
+
+.nav-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
+    -fx-padding: 4 0 6 6;
+    -fx-background-color: transparent;
+}
+
+.main-root.dark-mode .nav-title {
+    -fx-text-fill: #e2e8f0;
+}
+
+
+/* 树菜单 */
+
+.menu-tree {
+
+    -fx-background-color: rgba(255,255,255,0.9);
+
+    -fx-background-radius: 18;
+
+    -fx-padding: 8;
+
+    -fx-effect:
+            dropshadow(gaussian, rgba(163,177,198,0.45), 14, 0.28, 0, 4);
+}
+
+
+/* 树节点 */
+
+.menu-tree .tree-cell {
+
+    -fx-background-radius: 12;
+
+    -fx-padding: 6 8 6 8;
+
+    -fx-font-size: 13px;
+}
+
+.menu-tree .tree-cell:hover {
+
+    -fx-background-color: rgba(219,234,254,0.9);
+}
+
+.menu-tree .tree-cell:selected {
+
+    -fx-background-color: linear-gradient(to right, #dbeafe, #e0ecff);
+
+    -fx-font-weight: bold;
+}
+
+
+/* =========================
+   中央内容区
+   ========================= */
+
+.center-area {
+
+    -fx-background-color: transparent;
+}
+
+
+/* TabPane */
+
+.content-tabs {
+
+    -fx-background-color: transparent;
+}
+
+/* tab header */
+
+.content-tabs .tab-header-area {
+
+    -fx-padding: 6 6 0 6;
+}
+
+/* tab */
+
+.content-tabs .tab {
+
+    -fx-background-color:
+            linear-gradient(to bottom right, #e9eef6, #dfe7f5);
+
+    -fx-background-radius: 12 12 0 0;
+
+    -fx-padding: 8 14 8 14;
+
+    -fx-font-weight: bold;
+}
+
+.content-tabs .tab:selected {
+
+    -fx-background-color:
+            linear-gradient(to bottom right, #ffffff, #f4f7fd);
+
+    -fx-effect:
+            dropshadow(gaussian, rgba(163,177,198,0.35), 8, 0.2, 0, 1);
+}
+
+
+/* tab 内容 */
+
+.content-tabs .tab-content-area {
+
+    -fx-background-color: rgba(255,255,255,0.9);
+
+    -fx-background-radius: 0 18 18 18;
+
+    -fx-effect:
+            dropshadow(gaussian, rgba(163,177,198,0.35), 18, 0.28, 0, 6);
+}
+
+
+
+/* =========================
+   状态栏
+   ========================= */
+
+.status-card {
+
+    -fx-background-color: rgba(255,255,255,0.85);
+
+    -fx-background-radius: 18;
+
+    -fx-effect:
+            dropshadow(gaussian, rgba(163,177,198,0.4), 14, 0.28, 0, 4);
+}
+
+.status-title {
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #334155;
+}
+
+.status-text {
+
+    -fx-text-fill: #475569;
+}
+
+.status-text-right {
+
+    -fx-text-fill: #64748b;
+}
+/* 深色模式 */
+.main-root.dark-mode {
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);
+}
+
+.main-root.dark-mode .header-card {
+    -fx-background-color: linear-gradient(to right, #1d4ed8, #1e40af);
+}
+
+.main-root.dark-mode .menu-tree,
+.main-root.dark-mode .menubar-card,
+.main-root.dark-mode .status-card {
+    -fx-background-color: rgba(30, 41, 59, 0.92);
+}
+
+.main-root.dark-mode .nav-title,
+.main-root.dark-mode .status-title,
+.main-root.dark-mode .status-text,
+.main-root.dark-mode .status-text-right {
+    -fx-text-fill: #e2e8f0;
+}
+
+.main-root.dark-mode .menu-tree .tree-cell {
+    -fx-text-fill: #e2e8f0;
+}
+
+.main-root.dark-mode .menu-tree .tree-cell:hover {
+    -fx-background-color: rgba(59,130,246,0.35);
+}
+
+.main-root.dark-mode .content-tabs .tab-content-area {
+    -fx-background-color: rgba(30, 41, 59, 0.96);
+}
+
+.main-root.dark-mode .content-tabs .tab {
+    -fx-background-color: linear-gradient(to bottom right, #334155, #1e293b);
+    -fx-text-fill: #e2e8f0;
+}
+
+.main-root.dark-mode .content-tabs .tab:selected {
+    -fx-background-color: linear-gradient(to bottom right, #475569, #334155);
+}
+
+/* 紧凑模式 */
+.main-root.compact-mode .header-card {
+    -fx-padding: 10 14 10 14;
+}
+
+.main-root.compact-mode .app-title {
+    -fx-font-size: 20px;
+}
+
+.main-root.compact-mode .menu-tree .tree-cell {
+    -fx-padding: 3 6 3 6;
+    -fx-font-size: 12px;
+}
+
+.main-root.compact-mode .content-tabs .tab {
+    -fx-padding: 4 10 4 10;
+}
+
+.main-root.compact-mode .status-card {
+    -fx-padding: 6 10 6 10;
+}
+/* 深色模式左侧菜单 */
+.dark-theme .left-menu {
+    -fx-background-color: #1e293b;
+}
+
+/* 左侧菜单按钮 */
+.dark-theme .left-menu .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e2e8f0;
+}
+
+/* 鼠标悬停 */
+.dark-theme .left-menu .button:hover {
+    -fx-background-color: #334155;
+    -fx-text-fill: white;
+}
+
+/* 选中的菜单 */
+.dark-theme .left-menu .button:selected {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+/* =========================
+   顶部标题增强
+   ========================= */
+.header-card {
+    -fx-background-color: linear-gradient(to right, rgba(255,255,255,0.95), rgba(248,250,252,0.92));
+    -fx-background-radius: 24;
+    -fx-padding: 18 22 18 22;
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,255,255,0.90), 10, 0.12, -2, -2),
+            dropshadow(gaussian, rgba(148,163,184,0.20), 18, 0.18, 4, 4);
+}
+
+.app-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.app-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+/* =========================
+   外观模式小卡片
+   ========================= */
+.theme-box {
+    -fx-background-color: rgba(255,255,255,0.78);
+    -fx-background-radius: 16;
+    -fx-padding: 8 12 8 12;
+    -fx-border-color: rgba(203,213,225,0.8);
+    -fx-border-radius: 16;
+}
+
+.small-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #475569;
+}
+
+.theme-combo {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+/* =========================
+   退出按钮优化
+   ========================= */
+.logout-button {
+    -fx-background-color: linear-gradient(to right, #ef4444, #dc2626);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-padding: 9 18 9 18;
+    -fx-cursor: hand;
+}
+
+.logout-button:hover {
+    -fx-opacity: 0.92;
+}
+
+/* =========================
+   左侧导航区域
+   ========================= */
+.left-area {
+    -fx-padding: 0;
+}
+
+.nav-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
+    -fx-padding: 2 0 4 4;
+}
+
+.nav-card {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-background-radius: 22;
+    -fx-padding: 10;
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,255,255,0.90), 8, 0.10, -2, -2),
+            dropshadow(gaussian, rgba(148,163,184,0.22), 16, 0.18, 4, 4);
+}
+
+.main-root.dark-mode .nav-card {
+    -fx-background-color: rgba(30,41,59,0.92);
+    -fx-border-color: rgba(71,85,105,0.85);
+    -fx-border-radius: 22;
+}
+/* =========================
+   菜单树基础
+   ========================= */
+.menu-tree {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 6;
+    -fx-border-color: transparent;
+}
+
+.menu-tree .viewport {
+    -fx-background-color: transparent;
+}
+
+.menu-tree .tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 13px;
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 12;
+}
+
+.menu-tree .tree-cell:hover {
+    -fx-background-color: #eff6ff;
+    -fx-text-fill: #1d4ed8;
+}
+
+.menu-tree .tree-cell:selected {
+    -fx-background-color: linear-gradient(to right, #dbeafe, #bfdbfe);
+    -fx-text-fill: #1e3a8a;
+    -fx-font-weight: bold;
+}
+
+/* =========================
+   内容区
+   ========================= */
+.center-area {
+    -fx-background-color: transparent;
+}
+
+.content-tabs {
+    -fx-background-color: transparent;
+}
+
+.content-tabs .tab-header-area {
+    -fx-padding: 6 6 0 6;
+}
+
+.content-tabs .tab {
+    -fx-background-color: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+    -fx-background-radius: 14 14 0 0;
+    -fx-padding: 8 16 8 16;
+}
+
+.content-tabs .tab:selected {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #eff6ff);
+}
+
+.content-tabs .tab .tab-label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.content-tabs .tab-content-area {
+    -fx-background-color: rgba(255,255,255,0.88);
+    -fx-background-radius: 0 18 18 18;
+    -fx-border-color: rgba(226,232,240,0.9);
+    -fx-border-radius: 0 18 18 18;
+}
+
+/* =========================
+   底部状态栏
+   ========================= */
+.status-card {
+    -fx-background-color: rgba(255,255,255,0.80);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(226,232,240,0.9);
+    -fx-border-radius: 18;
+}
+
+.status-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #475569;
+}
+
+.status-text,
+.status-text-right {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+/* =========================
+   深色模式
+   ========================= */
+.main-root.dark-mode {
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);
+}
+
+.main-root.dark-mode .header-card,
+.main-root.dark-mode .menubar-card,
+.main-root.dark-mode .nav-card,
+.main-root.dark-mode .status-card,
+.main-root.dark-mode .content-tabs .tab-content-area,
+.main-root.dark-mode .theme-box {
+    -fx-background-color: rgba(30,41,59,0.92);
+    -fx-border-color: rgba(71,85,105,0.85);
+}
+
+.main-root.dark-mode .app-title,
+.main-root.dark-mode .nav-title,
+.main-root.dark-mode .status-title,
+.main-root.dark-mode .small-label {
+    -fx-text-fill: #e2e8f0;
+}
+
+.main-root.dark-mode .app-subtitle,
+.main-root.dark-mode .status-text,
+.main-root.dark-mode .status-text-right {
+    -fx-text-fill: #cbd5e1;
+}
+
+.main-root.dark-mode .menu-tree .tree-cell {
+    -fx-text-fill: #e2e8f0;
+}
+
+.main-root.dark-mode .menu-tree .tree-cell:hover {
+    -fx-background-color: rgba(59,130,246,0.22);
+    -fx-text-fill: white;
+}
+
+.main-root.dark-mode .menu-tree .tree-cell:selected {
+    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.main-root.dark-mode .content-tabs .tab {
+    -fx-background-color: linear-gradient(to bottom, #334155, #1e293b);
+}
+
+.main-root.dark-mode .content-tabs .tab:selected {
+    -fx-background-color: linear-gradient(to bottom, #475569, #334155);
+}
+
+.main-root.dark-mode .content-tabs .tab .tab-label {
+    -fx-text-fill: #e2e8f0;
+}
+/* =========================
+   左侧 TreeView 导航增强
+   ========================= */
+.menu-tree {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 8;
+    -fx-border-color: transparent;
+    -fx-fixed-cell-size: 38;
+}
+
+.menu-tree .viewport {
+    -fx-background-color: transparent;
+}
+
+.menu-tree .tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+    -fx-padding: 6 10 6 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+/* 一级菜单更明显 */
+.menu-tree .tree-cell:filled {
+    -fx-background-insets: 2;
+}
+
+/* hover */
+.menu-tree .tree-cell:hover {
+    -fx-background-color: linear-gradient(to right, #eff6ff, #dbeafe);
+    -fx-text-fill: #1d4ed8;
+}
+
+/* 选中项 = 胶囊高亮 */
+.menu-tree .tree-cell:selected {
+    -fx-background-color: linear-gradient(to right, #2563eb, #3b82f6);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.28), 10, 0.20, 0, 2);
+}
+
+/* 展开箭头颜色 */
+.menu-tree .tree-disclosure-node .arrow {
+    -fx-background-color: #64748b;
+}
+
+/* 选中时箭头也变亮 */
+.menu-tree .tree-cell:selected .tree-disclosure-node .arrow {
+    -fx-background-color: white;
+}
+
+/* 深色模式 TreeView 强化 */
+.main-root.dark-mode .menu-tree .tree-cell {
+    -fx-text-fill: #e2e8f0;
+}
+
+.main-root.dark-mode .menu-tree .tree-cell:hover {
+    -fx-background-color: linear-gradient(to right, rgba(59,130,246,0.25), rgba(37,99,235,0.18));
+    -fx-text-fill: white;
+}
+
+.main-root.dark-mode .menu-tree .tree-cell:selected {
+    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.main-root.dark-mode .menu-tree .tree-disclosure-node .arrow {
+    -fx-background-color: #cbd5e1;
+}

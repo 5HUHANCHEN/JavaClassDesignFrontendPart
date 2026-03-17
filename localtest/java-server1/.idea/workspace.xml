@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29492169-b53e-456d-bcfd-26e8b98b9b1e" name="Changes" comment="Changes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/../.." source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\mn\apache-maven-3.9.14" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2tCVQcZRcdh4a8jwvtDnquxMO44" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JavaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.cleanPackage.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.java-server [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.java-server [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.java-server [validate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.JavaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/java/localtest/java-server1&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.59195405&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="debugInitializationType" value="AUTO" />
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.edu.sdu.java.server.models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.JavaServerApplication">
+    <configuration name="JavaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.sdu.java.server.JavaServerApplication" />
+      <module name="java-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.sdu.java.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.sdu.java.server.JavaServerApplication" />
+      <module name="java-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.sdu.java.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cleanPackage" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="-DskipTests" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="cleanPackage" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="-DskipTests" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="JavaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="java-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.edu.sdu.java.server.JavaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="java-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.edu.sdu.java.server.JavaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.cleanPackage" />
+      <item itemvalue="Spring Boot.JavaServerApplication" />
+      <item itemvalue="应用程序.JavaServerApplication" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="逻辑" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29492169-b53e-456d-bcfd-26e8b98b9b1e" name="Changes" comment="" />
+      <created>1739856028934</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739856028934</updated>
+      <workItem from="1772336998116" duration="899000" />
+      <workItem from="1772688405770" duration="1749000" />
+      <workItem from="1772851040272" duration="599000" />
+      <workItem from="1772858995469" duration="396000" />
+      <workItem from="1772882108651" duration="661000" />
+      <workItem from="1772890174115" duration="704000" />
+      <workItem from="1773050164587" duration="35000" />
+      <workItem from="1773065203269" duration="256000" />
+      <workItem from="1773228830536" duration="6358000" />
+      <workItem from="1773273930718" duration="5882000" />
+      <workItem from="1773303533038" duration="1474000" />
+      <workItem from="1773313256582" duration="1218000" />
+      <workItem from="1773369093738" duration="1226000" />
+      <workItem from="1773377822772" duration="4852000" />
+      <workItem from="1773446025339" duration="10598000" />
+      <workItem from="1773460738344" duration="1115000" />
+      <workItem from="1773562677082" duration="555000" />
+      <workItem from="1773650539189" duration="1699000" />
+      <workItem from="1773657893179" duration="685000" />
+      <workItem from="1773658596821" duration="5019000" />
+      <workItem from="1773705111322" duration="1439000" />
+      <workItem from="1773712754029" duration="5012000" />
+      <workItem from="1773743616252" duration="208000" />
+      <workItem from="1773743842064" duration="457000" />
+      <workItem from="1773744306506" duration="36000" />
+      <workItem from="1773744424504" duration="3685000" />
+      <workItem from="1773748458259" duration="309000" />
+    </task>
+    <task id="LOCAL-00001" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1740551465382</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740551465382</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1741482895751</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741482895751</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1741922333557</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741922333557</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1747951871437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747951871437</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1751004510165</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751004510165</updated>
+    </task>
+    <task id="LOCAL-00006" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1751006641346</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751006641346</updated>
+    </task>
+    <task id="LOCAL-00007" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1753217883292</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753217883292</updated>
+    </task>
+    <task id="LOCAL-00008" summary="lxq">
+      <option name="closed" value="true" />
+      <created>1768091030486</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1768091030486</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lxq" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

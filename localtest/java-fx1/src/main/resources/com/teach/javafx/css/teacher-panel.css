@@ -1,0 +1,262 @@
+.root-pane {
+    -fx-background-color: linear-gradient(to bottom right, #f8fbff, #eef4fb);
+    -fx-font-family: "Microsoft YaHei";
+}
+
+/* 顶部区域 */
+.top-wrapper {
+    -fx-background-color: transparent;
+}
+
+.header-card,
+.toolbar-card,
+.status-card,
+.table-wrapper {
+    -fx-background-color: rgba(255,255,255,0.96);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: #e7edf5;
+    -fx-border-width: 1;
+}
+
+.header-card {
+    -fx-padding: 20 22 20 22;
+}
+
+.toolbar-card {
+    -fx-padding: 14 18 14 18;
+}
+
+.status-card {
+    -fx-padding: 10 16 10 16;
+}
+
+.table-wrapper {
+    -fx-padding: 14;
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.page-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.small-label,
+.query-label,
+.status-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.status-text {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563eb;
+}
+
+/* 输入框 / 下拉框 */
+.query-field,
+.combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #d8e2ee;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 6 10 6 10;
+    -fx-font-size: 13px;
+}
+
+.query-field:focused,
+.combo-box:focused {
+    -fx-border-color: #3b82f6;
+    -fx-background-color: #fdfefe;
+}
+
+/* 按钮统一风格 */
+.button {
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 8 16 8 16;
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #60a5fa, #3b82f6);
+}
+
+.btn-success {
+    -fx-background-color: linear-gradient(to bottom, #22c55e, #16a34a);
+    -fx-text-fill: white;
+}
+
+.btn-success:hover {
+    -fx-background-color: linear-gradient(to bottom, #4ade80, #22c55e);
+}
+
+/* 表格整体 */
+.teacher-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: #edf2f7;
+    -fx-padding: 6;
+}
+
+.teacher-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f8fafc, #eef2f7);
+    -fx-background-radius: 14 14 0 0;
+}
+
+.teacher-table .column-header,
+.teacher-table .filler {
+    -fx-background-color: transparent;
+    -fx-size: 44px;
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+}
+
+.teacher-table .column-header .label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.teacher-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #eef2f7 transparent;
+    -fx-cell-size: 46px;
+}
+
+.teacher-table .table-row-cell:hover {
+    -fx-background-color: #f8fbff;
+}
+
+.teacher-table .table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.teacher-table .table-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+}
+
+/* 表格里的输入框 */
+.teacher-table .text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #60a5fa;
+    -fx-border-radius: 10;
+    -fx-padding: 4 8 4 8;
+}
+
+/* 深色模式 */
+.dark-mode {
+    -fx-background-color: linear-gradient(to bottom right, #0f172a, #1e293b);
+}
+
+.dark-mode .header-card,
+.dark-mode .toolbar-card,
+.dark-mode .status-card,
+.dark-mode .table-wrapper {
+    -fx-background-color: rgba(30,41,59,0.96);
+    -fx-border-color: #334155;
+}
+
+.dark-mode .page-title {
+    -fx-text-fill: #f8fafc;
+}
+
+.dark-mode .page-subtitle,
+.dark-mode .small-label,
+.dark-mode .query-label,
+.dark-mode .status-title {
+    -fx-text-fill: #cbd5e1;
+}
+
+.dark-mode .status-text {
+    -fx-text-fill: #93c5fd;
+}
+
+.dark-mode .query-field,
+.dark-mode .combo-box {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: white;
+    -fx-border-color: #475569;
+}
+
+.dark-mode .combo-box .list-cell {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: white;
+}
+
+.table-dark .column-header-background {
+    -fx-background-color: #334155;
+}
+
+.table-dark .column-header .label {
+    -fx-text-fill: #f8fafc;
+}
+
+.table-dark .table-row-cell {
+    -fx-background-color: #1e293b;
+    -fx-border-color: transparent transparent #334155 transparent;
+}
+
+.table-dark .table-row-cell:hover {
+    -fx-background-color: #273449;
+}
+
+.table-dark .table-row-cell:selected {
+    -fx-background-color: #1d4ed8;
+}
+
+.table-dark .table-cell {
+    -fx-text-fill: #f8fafc;
+}
+
+.table-dark .text-field {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: white;
+    -fx-border-color: #60a5fa;
+}
+
+/* 紧凑模式 */
+.compact-mode .header-card {
+    -fx-padding: 14 16 14 16;
+}
+
+.compact-mode .toolbar-card,
+.compact-mode .status-card,
+.compact-mode .table-wrapper {
+    -fx-padding: 10 12 10 12;
+}
+
+.compact-mode .page-title {
+    -fx-font-size: 21px;
+}
+
+.compact-mode .button {
+    -fx-padding: 6 12 6 12;
+    -fx-font-size: 12px;
+}
+
+.table-compact .table-row-cell {
+    -fx-cell-size: 36px;
+}
+
+.table-compact .column-header,
+.table-compact .filler {
+    -fx-size: 36px;
+}

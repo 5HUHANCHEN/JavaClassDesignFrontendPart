@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane"
+            fx:controller="com.teach.javafx.controller.base.MainFrameController"
+            prefWidth="1280.0"
+            prefHeight="760.0"
+            styleClass="main-root">
+
+  <top>
+    <VBox spacing="12.0" styleClass="top-area">
+      <children>
+
+        <!-- 顶部标题栏 -->
+        <HBox alignment="CENTER_LEFT" spacing="16.0" styleClass="header-card">
+          <children>
+            <VBox spacing="4.0">
+              <children>
+                <Label text="🎓 学生管理系统" styleClass="app-title"/>
+                <Label text="JavaFX + Spring Boot + MySQL 管理后台"
+                       styleClass="app-subtitle"/>
+              </children>
+            </VBox>
+
+            <HBox HBox.hgrow="ALWAYS"/>
+
+            <VBox spacing="4.0" alignment="CENTER_RIGHT" styleClass="theme-box">
+              <children>
+                <Label text="外观模式" styleClass="small-label"/>
+                <ComboBox fx:id="themeComboBox" prefWidth="150.0" styleClass="theme-combo"/>
+              </children>
+            </VBox>
+            <Button text="退出登录"
+                    onAction="#onLogoutMenuClick"
+                    styleClass="logout-button"/>
+          </children>
+        </HBox>
+
+        <!-- 菜单栏卡片 -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="menubar-card">
+          <children>
+            <MenuBar fx:id="menuBar" HBox.hgrow="ALWAYS"/>
+          </children>
+        </HBox>
+
+      </children>
+      <padding>
+        <Insets top="18.0" right="18.0" bottom="10.0" left="18.0"/>
+      </padding>
+    </VBox>
+  </top>
+
+  <left>
+    <VBox spacing="10.0" styleClass="left-area">
+      <children>
+        <Label text="功能导航" styleClass="nav-title"/>
+
+        <VBox VBox.vgrow="ALWAYS" styleClass="nav-card">
+          <children>
+            <TreeView fx:id="menuTree"
+                      prefWidth="230.0"
+                      VBox.vgrow="ALWAYS"
+                      styleClass="menu-tree"/>
+          </children>
+        </VBox>
+      </children>
+      <padding>
+        <Insets top="0.0" right="0.0" bottom="12.0" left="18.0"/>
+      </padding>
+    </VBox>
+  </left>
+
+  <center>
+    <VBox styleClass="center-area">
+      <children>
+        <TabPane fx:id="contentTabPane"
+                 tabClosingPolicy="ALL_TABS"
+                 VBox.vgrow="ALWAYS"
+                 styleClass="content-tabs"/>
+      </children>
+      <padding>
+        <Insets top="0.0" right="18.0" bottom="12.0" left="12.0"/>
+      </padding>
+    </VBox>
+  </center>
+
+  <bottom>
+    <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="status-card">
+      <children>
+        <Label text="系统信息：" styleClass="status-title"/>
+        <Label fx:id="systemPrompt" text="系统就绪" styleClass="status-text"/>
+        <HBox HBox.hgrow="ALWAYS"/>
+        <Label fx:id="rightStatusLabel" text="欢迎使用" styleClass="status-text-right"/>
+      </children>
+      <padding>
+        <Insets top="8.0" right="18.0" bottom="12.0" left="18.0"/>
+      </padding>
+    </HBox>
+  </bottom>
+
+</BorderPane>
