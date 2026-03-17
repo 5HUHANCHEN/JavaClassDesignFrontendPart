@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.teach.javafx.controller.base.StudentRegisterController"
+      alignment="CENTER"
+      spacing="16.0"
+      styleClass="login-card">
+
+    <padding>
+        <Insets top="24.0" right="24.0" bottom="24.0" left="24.0"/>
+    </padding>
+
+    <children>
+        <Label text="🎓 学生注册" styleClass="login-title"/>
+        <Label text="请填写注册信息" styleClass="login-subtitle"/>
+
+        <VBox spacing="8.0" maxWidth="320.0">
+            <children>
+                <Label text="学号 / 登录账号" styleClass="field-label"/>
+                <TextField fx:id="usernameField" promptText="请输入学号" styleClass="login-input"/>
+
+                <Label text="姓名" styleClass="field-label"/>
+                <TextField fx:id="nameField" promptText="请输入姓名" styleClass="login-input"/>
+
+                <Label text="邮箱" styleClass="field-label"/>
+                <TextField fx:id="emailField" promptText="请输入邮箱" styleClass="login-input"/>
+
+                <Label text="密码" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField" promptText="请输入密码" styleClass="login-input"/>
+
+                <Label text="确认密码" styleClass="field-label"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="请再次输入密码" styleClass="login-input"/>
+            </children>
+        </VBox>
+
+        <HBox spacing="10.0" alignment="CENTER">
+            <children>
+                <Button text="注册"
+                        onAction="#onRegisterButtonClick"
+                        styleClass="login-btn-primary"/>
+
+                <Button text="返回登录"
+                        onAction="#onBackButtonClick"
+                        styleClass="login-btn-secondary"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

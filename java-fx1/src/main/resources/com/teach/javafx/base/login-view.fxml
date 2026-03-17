@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToHeight="true"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            pannable="true"
+            vbarPolicy="AS_NEEDED"
+            style="-fx-background: transparent; -fx-background-color: transparent;"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.teach.javafx.controller.base.LoginController">
+
+    <content>
+        <StackPane fx:id="rootPane"
+                   alignment="TOP_CENTER"
+                   styleClass="login-root">
+
+            <children>
+                <VBox prefHeight="800.0"
+                      prefWidth="1200.0"
+                      styleClass="login-bg-layer"/>
+
+                <VBox fx:id="vbox"
+                      alignment="CENTER"
+                      spacing="20.0"
+                      styleClass="login-card"
+                      maxWidth="460.0">
+
+                    <StackPane.margin>
+                        <Insets top="50.0" right="0.0" bottom="120.0" left="0.0"/>
+                    </StackPane.margin>
+
+                    <padding>
+                        <Insets top="28.0" right="28.0" bottom="28.0" left="28.0"/>
+                    </padding>
+
+                    <children>
+
+                        <!-- Logo 和标题 -->
+                        <VBox alignment="CENTER" spacing="12.0">
+                            <children>
+                                <ImageView fx:id="imageView"
+                                           fitHeight="90.0"
+                                           fitWidth="110.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true"
+                                           styleClass="logo-image">
+                                    <image>
+                                        <Image url="@../picture/logo.jpg"/>
+                                    </image>
+                                </ImageView>
+
+                                <Label text="学生管理系统"
+                                       styleClass="login-title"/>
+
+                                <Label text="Student Management System"
+                                       styleClass="login-subtitle"/>
+                            </children>
+                        </VBox>
+
+                        <!-- 输入区 -->
+                        <VBox spacing="14.0" alignment="CENTER" maxWidth="320.0">
+                            <children>
+                                <VBox spacing="6.0">
+                                    <children>
+                                        <Label text="用户名" styleClass="field-label"/>
+                                        <TextField fx:id="usernameField"
+                                                   promptText="请输入用户名"
+                                                   styleClass="login-input"/>
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="6.0">
+                                    <children>
+                                        <Label text="密码" styleClass="field-label"/>
+                                        <PasswordField fx:id="passwordField"
+                                                       promptText="请输入密码"
+                                                       styleClass="login-input"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <!-- 按钮区 -->
+                        <VBox alignment="CENTER" spacing="12.0" maxWidth="320.0">
+                            <children>
+                                <Button text="管理员登录"
+                                        onAction="#onAdminLoginButtonClick"
+                                        maxWidth="Infinity"
+                                        styleClass="login-btn-primary"/>
+
+                                <HBox spacing="10.0" alignment="CENTER">
+                                    <children>
+                                        <Button text="学生登录"
+                                                onAction="#onStudentLoginButtonClick"
+                                                HBox.hgrow="ALWAYS"
+                                                maxWidth="Infinity"
+                                                styleClass="login-btn-secondary"/>
+
+                                        <Button text="教师登录"
+                                                onAction="#onTeacherLoginButtonClick"
+                                                HBox.hgrow="ALWAYS"
+                                                maxWidth="Infinity"
+                                                styleClass="login-btn-secondary"/>
+                                    </children>
+                                </HBox>
+
+                                <Button text="登录"
+                                        onAction="#onLoginButtonClick"
+                                        maxWidth="Infinity"
+                                        styleClass="login-btn-secondary"/>
+
+                                <HBox spacing="10.0" alignment="CENTER">
+                                    <children>
+                                        <Button text="学生注册"
+                                                onAction="#onStudentRegisterButtonClick"
+                                                HBox.hgrow="ALWAYS"
+                                                maxWidth="Infinity"
+                                                styleClass="login-btn-secondary"/>
+
+                                        <Button text="账号申请"
+                                                onAction="#onApplyRegisterButtonClick"
+                                                HBox.hgrow="ALWAYS"
+                                                maxWidth="Infinity"
+                                                styleClass="login-btn-secondary"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- 底部提示 -->
+                        <Label text="欢迎进入系统，请选择身份登录或注册"
+                               styleClass="footer-text"/>
+
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </content>
+</ScrollPane>

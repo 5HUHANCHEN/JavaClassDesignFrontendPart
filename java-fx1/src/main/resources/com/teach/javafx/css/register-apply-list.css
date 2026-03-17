@@ -1,0 +1,235 @@
+/* =========================
+   页面整体背景
+   ========================= */
+.audit-root {
+    -fx-background-color:
+            radial-gradient(center 20% 20%, radius 100%, rgba(255,255,255,0.95), rgba(227,236,248,0.92)),
+            linear-gradient(to bottom right, #edf4ff, #dbeafe);
+    -fx-font-family: "Microsoft YaHei UI";
+}
+
+/* =========================
+   顶部横幅
+   ========================= */
+.top-banner {
+    -fx-padding: 24 28 24 28;
+    -fx-background-color: linear-gradient(to right, #2563eb, #3b82f6);
+    -fx-background-radius: 0 0 24 24;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.28), 22, 0.25, 0, 6);
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: rgba(255,255,255,0.88);
+}
+
+/* =========================
+   通用卡片
+   ========================= */
+.neo-card {
+    -fx-padding: 18 20 18 20;
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,255,255,0.96), 10, 0.15, -2, -2),
+            dropshadow(gaussian, rgba(148,163,184,0.22), 16, 0.20, 4, 4);
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #475569;
+}
+
+.count-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.hint-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+/* =========================
+   顶部统计卡片
+   ========================= */
+.stat-card {
+    -fx-padding: 18 20 18 20;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,255,255,0.92), 10, 0.16, -2, -2),
+            dropshadow(gaussian, rgba(148,163,184,0.25), 14, 0.20, 4, 4);
+}
+
+.stat-pending {
+    -fx-background-color: linear-gradient(to bottom right, #fff8db, #ffe7a3);
+}
+
+.stat-approved {
+    -fx-background-color: linear-gradient(to bottom right, #dcfce7, #bbf7d0);
+}
+
+.stat-rejected {
+    -fx-background-color: linear-gradient(to bottom right, #fee2e2, #fecaca);
+}
+
+.stat-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
+}
+
+.stat-number {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.stat-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+/* =========================
+   输入框 / 下拉框
+   ========================= */
+.neo-input,
+.neo-combo {
+    -fx-background-color: #f8fbff;
+    -fx-background-radius: 12;
+    -fx-border-color: #dbeafe;
+    -fx-border-radius: 12;
+    -fx-padding: 8 12 8 12;
+    -fx-text-fill: #1e293b;
+}
+
+.neo-input:focused,
+.neo-combo:focused {
+    -fx-border-color: #60a5fa;
+    -fx-background-color: white;
+}
+
+/* =========================
+   按钮
+   ========================= */
+.neo-btn-primary,
+.neo-btn-info,
+.neo-btn-light,
+.neo-btn-success,
+.neo-btn-danger {
+    -fx-background-radius: 14;
+    -fx-padding: 8 18 8 18;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.neo-btn-primary {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+}
+
+.neo-btn-info {
+    -fx-background-color: linear-gradient(to right, #60a5fa, #3b82f6);
+    -fx-text-fill: white;
+}
+
+.neo-btn-light {
+    -fx-background-color: linear-gradient(to right, #f1f5f9, #e2e8f0);
+    -fx-text-fill: #334155;
+}
+
+.neo-btn-success {
+    -fx-background-color: linear-gradient(to right, #22c55e, #16a34a);
+    -fx-text-fill: white;
+}
+
+.neo-btn-danger {
+    -fx-background-color: linear-gradient(to right, #ef4444, #dc2626);
+    -fx-text-fill: white;
+}
+
+.neo-btn-primary:hover,
+.neo-btn-info:hover,
+.neo-btn-light:hover,
+.neo-btn-success:hover,
+.neo-btn-danger:hover {
+    -fx-opacity: 0.92;
+}
+
+/* =========================
+   表格
+   ========================= */
+.audit-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: #e2e8f0;
+    -fx-padding: 4;
+}
+
+.audit-table .column-header-background {
+    -fx-background-color: linear-gradient(to right, #eff6ff, #dbeafe);
+    -fx-background-radius: 14 14 0 0;
+    -fx-padding: 4;
+}
+
+.audit-table .column-header,
+.audit-table .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #dbeafe transparent;
+}
+
+.audit-table .column-header .label {
+    -fx-text-fill: #1e40af;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+.audit-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #eef2f7 transparent;
+    -fx-padding: 2;
+}
+
+.audit-table .table-row-cell:hover {
+    -fx-background-color: #f8fbff;
+}
+
+.audit-table .table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.audit-table .table-cell {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 8 10 8;
+    -fx-border-color: transparent;
+}
+
+/* 滚动条 */
+.audit-table .scroll-bar:vertical,
+.audit-table .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.audit-table .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 10;
+}

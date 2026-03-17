@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane"
+            fx:controller="com.teach.javafx.controller.StudentSelfController"
+            styleClass="student-self-root">
+    <stylesheets>
+        <String fx:value="@../css/student-self-panel.css"/>
+    </stylesheets>
+
+    <top>
+        <VBox spacing="12.0" styleClass="self-top-wrapper">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="self-header-card">
+                    <children>
+                        <VBox spacing="4.0">
+                            <children>
+                                <Label text="👨‍🎓 我的信息" styleClass="self-page-title"/>
+                                <Label text="查看并维护你的个人资料，仅允许修改联系方式和头像"
+                                       styleClass="self-page-subtitle"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets top="18.0" right="18.0" bottom="10.0" left="18.0"/>
+            </padding>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="18.0">
+            <children>
+
+                <!-- 左侧个人资料卡 -->
+                <VBox spacing="16.0" prefWidth="280.0" styleClass="profile-card">
+                    <children>
+                        <ImageView fx:id="photoImageView"
+                                   fitWidth="140.0"
+                                   fitHeight="160.0"
+                                   preserveRatio="true"
+                                   styleClass="profile-photo"/>
+
+                        <Button fx:id="photoButton"
+                                text="上传头像"
+                                onAction="#onPhotoButtonClick"
+                                styleClass="primary-button"
+                                maxWidth="Infinity"/>
+
+                        <VBox spacing="10.0" styleClass="profile-info-box">
+                            <children>
+                                <Label text="个人资料" styleClass="section-title"/>
+
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <Label text="学号：" styleClass="info-label"/>
+                                        <Label fx:id="numLabel" text="-" styleClass="info-value"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <Label text="姓名：" styleClass="info-label"/>
+                                        <Label fx:id="nameLabel" text="-" styleClass="info-value"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <Label text="院系：" styleClass="info-label"/>
+                                        <Label fx:id="deptLabel" text="-" styleClass="info-value"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <Label text="专业：" styleClass="info-label"/>
+                                        <Label fx:id="majorLabel" text="-" styleClass="info-value"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <Label text="班级：" styleClass="info-label"/>
+                                        <Label fx:id="classLabel" text="-" styleClass="info-value"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+                    </padding>
+                </VBox>
+
+                <!-- 右侧表单卡 -->
+                <VBox spacing="16.0" HBox.hgrow="ALWAYS" styleClass="form-card">
+                    <children>
+
+                        <Label text="基础信息" styleClass="section-title"/>
+
+                        <GridPane hgap="14.0" vgap="14.0">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="90.0"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                                <ColumnConstraints prefWidth="90.0"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                            </columnConstraints>
+
+                            <children>
+                                <Label text="学号" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="form-label"/>
+                                <TextField fx:id="numField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="readonly-field"/>
+
+                                <Label text="姓名" GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="form-label"/>
+                                <TextField fx:id="nameField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="3" styleClass="readonly-field"/>
+
+                                <Label text="性别" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="form-label"/>
+                                <TextField fx:id="genderField" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="readonly-field"/>
+
+                                <Label text="出生日期" GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="form-label"/>
+                                <DatePicker fx:id="birthdayPick" disable="true" GridPane.rowIndex="1" GridPane.columnIndex="3" styleClass="readonly-field"/>
+                            </children>
+                        </GridPane>
+
+                        <Label text="学籍信息" styleClass="section-title"/>
+
+                        <GridPane hgap="14.0" vgap="14.0">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="90.0"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                                <ColumnConstraints prefWidth="90.0"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                            </columnConstraints>
+
+                            <children>
+                                <Label text="院系" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="form-label"/>
+                                <TextField fx:id="deptField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="readonly-field"/>
+
+                                <Label text="专业" GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="form-label"/>
+                                <TextField fx:id="majorField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="3" styleClass="readonly-field"/>
+
+                                <Label text="班级" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="form-label"/>
+                                <TextField fx:id="classNameField" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="readonly-field"/>
+
+                                <Label text="证件号" GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="form-label"/>
+                                <TextField fx:id="cardField" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="3" styleClass="readonly-field"/>
+                            </children>
+                        </GridPane>
+
+                        <Label text="联系方式" styleClass="section-title"/>
+
+                        <GridPane hgap="14.0" vgap="14.0">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="90.0"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                            </columnConstraints>
+
+                            <children>
+                                <Label text="邮箱" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="form-label"/>
+                                <TextField fx:id="emailField" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="editable-field"/>
+
+                                <Label text="电话" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="form-label"/>
+                                <TextField fx:id="phoneField" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="editable-field"/>
+
+                                <Label text="地址" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="form-label"/>
+                                <TextArea fx:id="addressArea"
+                                          prefRowCount="3"
+                                          wrapText="true"
+                                          GridPane.rowIndex="2"
+                                          GridPane.columnIndex="1"
+                                          styleClass="editable-area"/>
+                            </children>
+                        </GridPane>
+
+                        <FlowPane hgap="12.0" vgap="12.0" styleClass="button-bar">
+                            <children>
+                                <Button text="保存修改"
+                                        onAction="#onSaveButtonClick"
+                                        styleClass="primary-button"/>
+
+                                <Label fx:id="statusLabel" text="当前仅允许修改联系方式和头像" styleClass="status-hint"/>
+                            </children>
+                        </FlowPane>
+                    </children>
+
+                    <padding>
+                        <Insets top="22.0" right="24.0" bottom="22.0" left="24.0"/>
+                    </padding>
+                </VBox>
+
+            </children>
+            <padding>
+                <Insets top="0.0" right="18.0" bottom="18.0" left="18.0"/>
+            </padding>
+        </HBox>
+    </center>
+
+</BorderPane>
