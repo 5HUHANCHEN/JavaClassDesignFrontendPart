@@ -18,7 +18,8 @@ import lombok.Setter;
 @Table(	name = "menu",
         uniqueConstraints = {
         })
-public class MenuInfo {
+public class
+MenuInfo {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

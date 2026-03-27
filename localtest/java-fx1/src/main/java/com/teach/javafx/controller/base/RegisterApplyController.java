@@ -8,7 +8,7 @@ import javafx.animation.FadeTransition;
 import javafx.util.Duration;
 
 import javafx.scene.layout.HBox;
-
+import com.teach.javafx.util.ToastUtil;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -68,113 +68,66 @@ public class RegisterApplyController {
         statusComboBox.setItems(FXCollections.observableArrayList("待审核", "已通过", "已拒绝"));
         statusComboBox.setValue("待审核");
 
-        applyIdColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "applyId")));
-        usernameColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "username")));
-        nameColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "name")));
-        roleColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(formatRole(getValue(cellData.getValue(), "role"))));
-        deptColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "dept")));
-        phoneColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "phone")));
-        emailColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "email")));
-        applyTimeColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "applyTime")));
-        reasonColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(getValue(cellData.getValue(), "reason")));
+        applyIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "applyId")));
+        usernameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "username")));
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "name")));
+        roleColumn.setCellValueFactory(cellData -> new SimpleStringProperty(formatRole(getValue(cellData.getValue(), "role"))));
+        deptColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "dept")));
+        phoneColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "phone")));
+        emailColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "email")));
+        applyTimeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "applyTime")));
+        reasonColumn.setCellValueFactory(cellData -> new SimpleStringProperty(getValue(cellData.getValue(), "reason")));
+        statusColumn.setCellValueFactory(cellData -> new SimpleStringProperty(formatStatus(getValue(cellData.getValue(), "status"))));
 
-        statusColumn.setCellValueFactory(cellData ->
-                new SimpleStringProperty(formatStatus(getValue(cellData.getValue(), "status"))));
-
+        // 1. 独立渲染状态列
         statusColumn.setCellFactory(column -> new TableCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
-                setText(null);
-                setGraphic(null);
-                actionColumn.setCellFactory(column -> new TableCell<>() {
-                    private final Button approveBtn = new Button("通过");
-                    private final Button rejectBtn = new Button("拒绝");
-                    private final Button detailBtn = new Button("详情");
-                    private final HBox buttonBox = new HBox(8, approveBtn, rejectBtn, detailBtn);
-
-                    {
-                        approveBtn.setStyle(
-                                "-fx-background-color: linear-gradient(to right, #22c55e, #16a34a);" +
-                                        "-fx-text-fill: white;" +
-                                        "-fx-background-radius: 14;" +
-                                        "-fx-font-size: 12px;" +
-                                        "-fx-font-weight: bold;" +
-                                        "-fx-cursor: hand;"
-                        );
-
-                        rejectBtn.setStyle(
-                                "-fx-background-color: linear-gradient(to right, #ef4444, #dc2626);" +
-                                        "-fx-text-fill: white;" +
-                                        "-fx-background-radius: 14;" +
-                                        "-fx-font-size: 12px;" +
-                                        "-fx-font-weight: bold;" +
-                                        "-fx-cursor: hand;"
-                        );
-
-                        detailBtn.setStyle(
-                                "-fx-background-color: linear-gradient(to right, #60a5fa, #2563eb);" +
-                                        "-fx-text-fill: white;" +
-                                        "-fx-background-radius: 14;" +
-                                        "-fx-font-size: 12px;" +
-                                        "-fx-font-weight: bold;" +
-                                        "-fx-cursor: hand;"
-                        );
-
-                        approveBtn.setOnAction(event -> {
-                            Map<String, Object> rowData = getTableView().getItems().get(getIndex());
-                            handleApprove(rowData);
-                        });
-
-                        rejectBtn.setOnAction(event -> {
-                            Map<String, Object> rowData = getTableView().getItems().get(getIndex());
-                            handleReject(rowData);
-                        });
-
-                        detailBtn.setOnAction(event -> {
-                            Map<String, Object> rowData = getTableView().getItems().get(getIndex());
-                            handleViewDetail(rowData);
-                        });
-                    }
-
-                    @Override
-                    protected void updateItem(String item, boolean empty) {
-                        super.updateItem(item, empty);
-                        setText(null);
-                        setGraphic(null);
-
-                        if (empty || getIndex() < 0 || getIndex() >= getTableView().getItems().size()) {
-                            return;
-                        }
-
-                        Map<String, Object> rowData = getTableView().getItems().get(getIndex());
-                        String status = formatStatus(getValue(rowData, "status"));
-
-                        if ("已通过".equals(status) || "已拒绝".equals(status)) {
-                            HBox box = new HBox(8, detailBtn);
-                            setGraphic(box);
-                        } else {
-                            setGraphic(buttonBox);
-                        }
-                    }
-                });
-
                 if (empty || item == null || item.isEmpty()) {
+                    setText(null);
+                    setGraphic(null);
                     return;
                 }
-
                 Label tag = new Label(item);
                 tag.setStyle(getStatusStyle(item));
                 setGraphic(tag);
+            }
+        });
+
+        // 2. 独立渲染操作列按钮（解除嵌套，扁平化）
+        actionColumn.setCellFactory(column -> new TableCell<>() {
+            private final Button approveBtn = new Button("通过");
+            private final Button rejectBtn = new Button("拒绝");
+            private final Button detailBtn = new Button("详情");
+            private final HBox buttonBox = new HBox(8, approveBtn, rejectBtn, detailBtn);
+
+            {
+                approveBtn.setStyle("-fx-background-color: #22c55e; -fx-text-fill: white; -fx-background-radius: 4px; -fx-cursor: hand;");
+                rejectBtn.setStyle("-fx-background-color: #ef4444; -fx-text-fill: white; -fx-background-radius: 4px; -fx-cursor: hand;");
+                detailBtn.setStyle("-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-background-radius: 4px; -fx-cursor: hand;");
+
+                approveBtn.setOnAction(event -> handleApprove(getTableView().getItems().get(getIndex())));
+                rejectBtn.setOnAction(event -> handleReject(getTableView().getItems().get(getIndex())));
+                detailBtn.setOnAction(event -> handleViewDetail(getTableView().getItems().get(getIndex())));
+            }
+
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || getIndex() < 0 || getIndex() >= getTableView().getItems().size()) {
+                    setText(null);
+                    setGraphic(null);
+                    return;
+                }
+                Map<String, Object> rowData = getTableView().getItems().get(getIndex());
+                String status = formatStatus(getValue(rowData, "status"));
+                // 如果已经处理过，则只显示详情按钮
+                if ("已通过".equals(status) || "已拒绝".equals(status)) {
+                    setGraphic(new HBox(8, detailBtn));
+                } else {
+                    setGraphic(buttonBox);
+                }
             }
         });
 
@@ -184,11 +137,12 @@ public class RegisterApplyController {
             TableRow<Map<String, Object>> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && !row.isEmpty()) {
-                    onViewDetailButtonClick();
+                    handleViewDetail(row.getItem());
                 }
             });
             return row;
         });
+
         FadeTransition ft = new FadeTransition(Duration.millis(550), applyTable);
         ft.setFromValue(0.0);
         ft.setToValue(1.0);
@@ -212,16 +166,15 @@ public class RegisterApplyController {
         loadTableData();
     }
 
-
     private void handleApprove(Map<String, Object> selected) {
         if (selected == null) {
-            MessageDialog.showDialog("请先选择一条申请记录！");
+            ToastUtil.showError("请先选择一条申请记录！");
             return;
         }
 
         Integer applyId = parseInteger(selected.get("applyId"));
         if (applyId == null) {
-            MessageDialog.showDialog("申请ID无效！");
+            ToastUtil.showError("申请ID无效！");
             return;
         }
 
@@ -246,10 +199,10 @@ public class RegisterApplyController {
 
                 DataResponse res = HttpRequestUtil.request("/auth/approveRegisterApply", req);
                 if (res != null && res.getCode() == 0) {
-                    MessageDialog.showDialog("审核通过成功！");
+                    ToastUtil.showSuccess("审核通过成功！");
                     loadTableData();
                 } else {
-                    MessageDialog.showDialog(res == null ? "审核通过失败！" : res.getMsg());
+                    ToastUtil.showError(res == null ? "审核通过失败！" : res.getMsg());
                 }
             }
         });
@@ -257,13 +210,13 @@ public class RegisterApplyController {
 
     private void handleReject(Map<String, Object> selected) {
         if (selected == null) {
-            MessageDialog.showDialog("请先选择一条申请记录！");
+            ToastUtil.showError("请先选择一条申请记录！");
             return;
         }
 
         Integer applyId = parseInteger(selected.get("applyId"));
         if (applyId == null) {
-            MessageDialog.showDialog("申请ID无效！");
+            ToastUtil.showError("申请ID无效！");
             return;
         }
 
@@ -278,40 +231,28 @@ public class RegisterApplyController {
         TextArea reasonArea = new TextArea();
         reasonArea.setPromptText("请输入拒绝原因...");
         reasonArea.setWrapText(true);
-        reasonArea.setPrefRowCount(6);
+        reasonArea.setPrefRowCount(4);
         reasonArea.setPrefWidth(380);
 
         VBox box = new VBox(10);
         box.getChildren().addAll(
                 new Label("申请人：" + getValue(selected, "name")),
                 new Label("账号：" + getValue(selected, "username")),
-                new Label("角色：" + formatRole(getValue(selected, "role"))),
                 new Label("拒绝原因："),
                 reasonArea
         );
-        box.setStyle(
-                "-fx-padding: 16;" +
-                        "-fx-background-color: linear-gradient(to bottom right, #f8fbff, #eef4fb);" +
-                        "-fx-background-radius: 16;"
-        );
+        box.setStyle("-fx-padding: 16; -fx-background-color: white;");
 
         dialog.getDialogPane().setContent(box);
-        dialog.getDialogPane().setPrefWidth(460);
-        dialog.getDialogPane().setStyle(
-                "-fx-background-color: linear-gradient(to bottom right, #f4f8fd, #e9f0fa);" +
-                        "-fx-background-radius: 16;"
-        );
 
         dialog.setResultConverter(button -> {
-            if (button == confirmBtn) {
-                return reasonArea.getText();
-            }
+            if (button == confirmBtn) return reasonArea.getText();
             return null;
         });
 
         dialog.showAndWait().ifPresent(remark -> {
             if (remark == null || remark.trim().isEmpty()) {
-                MessageDialog.showDialog("请输入拒绝原因！");
+                ToastUtil.showError("请输入拒绝原因！");
                 return;
             }
 
@@ -321,13 +262,35 @@ public class RegisterApplyController {
 
             DataResponse res = HttpRequestUtil.request("/auth/rejectRegisterApply", req);
             if (res != null && res.getCode() == 0) {
-                MessageDialog.showDialog("已拒绝该申请！");
+                ToastUtil.showSuccess("已拒绝该申请！");
                 loadTableData();
             } else {
-                MessageDialog.showDialog(res == null ? "拒绝申请失败！" : res.getMsg());
+                ToastUtil.showError(res == null ? "拒绝申请失败！" : res.getMsg());
             }
         });
     }
+
+    @FXML
+    protected void onApproveButtonClick() {
+        handleApprove(applyTable.getSelectionModel().getSelectedItem());
+    }
+
+    @FXML
+    protected void onRejectButtonClick() {
+        handleReject(applyTable.getSelectionModel().getSelectedItem());
+    }
+
+    @FXML
+    protected void onViewDetailButtonClick() {
+        Map<String, Object> selected = applyTable.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            ToastUtil.showError("请先选择一条申请记录！");
+            return;
+        }
+        handleViewDetail(selected);
+    }
+
+
 
     private void handleViewDetail(Map<String, Object> selected) {
         if (selected == null) {
@@ -430,181 +393,7 @@ public class RegisterApplyController {
         grid.add(label, 0, row);
         grid.add(value, 1, row);
     }
-    @FXML
-    protected void onApproveButtonClick() {
-        handleApprove(applyTable.getSelectionModel().getSelectedItem());
-        Map<String, Object> selected = applyTable.getSelectionModel().getSelectedItem();
-        if (selected == null) {
-            MessageDialog.showDialog("请先选择一条申请记录！");
-            return;
-        }
 
-        Integer applyId = parseInteger(selected.get("applyId"));
-        if (applyId == null) {
-            MessageDialog.showDialog("申请ID无效！");
-            return;
-        }
-
-        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
-        confirm.setTitle("审核通过");
-        confirm.setHeaderText("确认通过该申请？");
-        confirm.setContentText(
-                "用户名：" + getValue(selected, "username") + "\n" +
-                        "姓名：" + getValue(selected, "name") + "\n" +
-                        "角色：" + formatRole(getValue(selected, "role"))
-        );
-
-        ButtonType yesBtn = new ButtonType("确认通过", ButtonBar.ButtonData.OK_DONE);
-        ButtonType noBtn = new ButtonType("取消", ButtonBar.ButtonData.CANCEL_CLOSE);
-        confirm.getButtonTypes().setAll(yesBtn, noBtn);
-
-        confirm.showAndWait().ifPresent(result -> {
-            if (result == yesBtn) {
-                DataRequest req = new DataRequest();
-                req.add("applyId", applyId);
-                req.add("remark", "审核通过");
-
-                DataResponse res = HttpRequestUtil.request("/auth/approveRegisterApply", req);
-                if (res != null && res.getCode() == 0) {
-                    MessageDialog.showDialog("审核通过成功！");
-                    loadTableData();
-                } else {
-                    MessageDialog.showDialog(res == null ? "审核通过失败！" : res.getMsg());
-                }
-            }
-        });
-    }
-    @FXML
-    protected void onRejectButtonClick() {
-        handleReject(applyTable.getSelectionModel().getSelectedItem());
-        Map<String, Object> selected = applyTable.getSelectionModel().getSelectedItem();
-        if (selected == null) {
-            MessageDialog.showDialog("请先选择一条申请记录！");
-            return;
-        }
-
-        Integer applyId = parseInteger(selected.get("applyId"));
-        if (applyId == null) {
-            MessageDialog.showDialog("申请ID无效！");
-            return;
-        }
-
-        Dialog<String> dialog = new Dialog<>();
-        dialog.setTitle("拒绝申请");
-        dialog.setHeaderText("请输入拒绝原因");
-
-        ButtonType confirmBtn = new ButtonType("确认拒绝", ButtonBar.ButtonData.OK_DONE);
-        ButtonType cancelBtn = new ButtonType("取消", ButtonBar.ButtonData.CANCEL_CLOSE);
-        dialog.getDialogPane().getButtonTypes().addAll(confirmBtn, cancelBtn);
-
-        TextArea reasonArea = new TextArea();
-        reasonArea.setPromptText("请输入拒绝原因...");
-        reasonArea.setWrapText(true);
-        reasonArea.setPrefRowCount(6);
-        reasonArea.setPrefWidth(380);
-
-        VBox box = new VBox(10);
-        box.getChildren().addAll(
-                new Label("申请人：" + getValue(selected, "name")),
-                new Label("账号：" + getValue(selected, "username")),
-                new Label("角色：" + formatRole(getValue(selected, "role"))),
-                new Label("拒绝原因："),
-                reasonArea
-        );
-        dialog.getDialogPane().setContent(box);
-
-        dialog.setResultConverter(button -> {
-            if (button == confirmBtn) {
-                return reasonArea.getText();
-            }
-            return null;
-        });
-
-        dialog.showAndWait().ifPresent(remark -> {
-            if (remark == null || remark.trim().isEmpty()) {
-                MessageDialog.showDialog("请输入拒绝原因！");
-                return;
-            }
-
-            DataRequest req = new DataRequest();
-            req.add("applyId", applyId);
-            req.add("remark", remark.trim());
-
-            DataResponse res = HttpRequestUtil.request("/auth/rejectRegisterApply", req);
-            if (res != null && res.getCode() == 0) {
-                MessageDialog.showDialog("已拒绝该申请！");
-                loadTableData();
-            } else {
-                MessageDialog.showDialog(res == null ? "拒绝申请失败！" : res.getMsg());
-            }
-        });
-    }
-
-    @FXML
-    protected void onViewDetailButtonClick() {
-        handleViewDetail(applyTable.getSelectionModel().getSelectedItem());
-        Map<String, Object> selected = applyTable.getSelectionModel().getSelectedItem();
-        if (selected == null) {
-            MessageDialog.showDialog("请先选择一条申请记录！");
-            return;
-        }
-
-        Dialog<Void> dialog = new Dialog<>();
-        dialog.setTitle("申请详情");
-        dialog.setHeaderText("账号申请详细信息");
-
-        ButtonType closeBtn = new ButtonType("关闭", ButtonBar.ButtonData.CANCEL_CLOSE);
-        dialog.getDialogPane().getButtonTypes().add(closeBtn);
-
-        GridPane grid = new GridPane();
-        grid.setHgap(16);
-        grid.setVgap(12);
-        grid.setStyle("-fx-padding: 20;");
-
-        int row = 0;
-        grid.add(new Label("申请ID："), 0, row);
-        grid.add(new Label(getValue(selected, "applyId")), 1, row++);
-
-        grid.add(new Label("用户名："), 0, row);
-        grid.add(new Label(getValue(selected, "username")), 1, row++);
-
-        grid.add(new Label("姓名："), 0, row);
-        grid.add(new Label(getValue(selected, "name")), 1, row++);
-
-        grid.add(new Label("角色："), 0, row);
-        grid.add(new Label(formatRole(getValue(selected, "role"))), 1, row++);
-
-        grid.add(new Label("院系："), 0, row);
-        grid.add(new Label(getValue(selected, "dept")), 1, row++);
-
-        grid.add(new Label("专业："), 0, row);
-        grid.add(new Label(getValue(selected, "major")), 1, row++);
-
-        grid.add(new Label("班级："), 0, row);
-        grid.add(new Label(getValue(selected, "className")), 1, row++);
-
-        grid.add(new Label("电话："), 0, row);
-        grid.add(new Label(getValue(selected, "phone")), 1, row++);
-
-        grid.add(new Label("邮箱："), 0, row);
-        grid.add(new Label(getValue(selected, "email")), 1, row++);
-
-        grid.add(new Label("申请时间："), 0, row);
-        grid.add(new Label(getValue(selected, "applyTime")), 1, row++);
-
-        grid.add(new Label("状态："), 0, row);
-        grid.add(new Label(formatStatus(getValue(selected, "status"))), 1, row++);
-
-        Label reasonLabel = new Label(getValue(selected, "reason"));
-        reasonLabel.setWrapText(true);
-        reasonLabel.setMaxWidth(320);
-
-        grid.add(new Label("申请原因："), 0, row);
-        grid.add(reasonLabel, 1, row);
-
-        dialog.getDialogPane().setContent(grid);
-        dialog.showAndWait();
-    }
 
     @SuppressWarnings("unchecked")
     private void loadTableData() {

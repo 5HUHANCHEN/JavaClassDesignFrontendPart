@@ -20,7 +20,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TextField;
-
+import com.teach.javafx.util.ToastUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -274,16 +274,20 @@ public class TeacherController {
         Integer personId = CommonMethod.getInteger(data, "personId");
 
         if (num == null || num.trim().isEmpty()) {
-            MessageDialog.showDialog("工号不能为空！");
-            updateStatus("保存失败：工号为空");
+            ToastUtil.showError("保存失败：工号不能为空！");
+            updateStatus("保存失败：工号为空"); // 如果你还需要更新底部状态栏，保留此行
             return;
         }
 
         if (name == null || name.trim().isEmpty()) {
-            MessageDialog.showDialog("姓名不能为空！");
-            updateStatus("保存失败：姓名为空");
+            ToastUtil.showError("保存失败：姓名不能为空！");
+            updateStatus("保存失败：姓名为空"); // 如果你还需要更新底部状态栏，保留此行
             return;
         }
+
+// 如果校验全部通过，执行保存逻辑...
+// 保存成功后调用：
+// ToastUtil.showSuccess("保存成功");
 
         DataRequest req = new DataRequest();
         req.add("personId", personId);
@@ -336,11 +340,11 @@ public class TeacherController {
         DataResponse res = HttpRequestUtil.request("/api/teacher/teacherDelete", req);
 
         if (res != null && res.getCode() == 0) {
-            MessageDialog.showDialog("删除成功！");
+            ToastUtil.showSuccess("删除成功！");
             onQueryButtonClick();
             updateStatus("删除成功");
         } else {
-            MessageDialog.showDialog(res == null ? "删除失败！" : res.getMsg());
+            ToastUtil.showError(res == null ? "删除失败！" : res.getMsg());
             updateStatus("删除失败");
         }
     }

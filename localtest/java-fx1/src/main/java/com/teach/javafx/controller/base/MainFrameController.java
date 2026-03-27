@@ -326,6 +326,10 @@ public class MainFrameController {
         if("ROLE_STUDENT".equals(AppStore.getJwt().getRole())){
             addStudentSelfMenu(mList);
         }
+        // 【新增】给教师直接添加专属菜单，跳过对"人员管理"的依赖
+        if("ROLE_TEACHER".equals(AppStore.getJwt().getRole())){
+            addTeacherSelfMenu(mList);
+        }
         // 添加账号申请审核菜单
         addRegisterApplyMenu(mList);
 
@@ -335,32 +339,64 @@ public class MainFrameController {
         contentTabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.ALL_TABS);
 
         System.out.println("MainFrameController 初始化完成");
+
     }
 
+    private void addTeacherSelfMenu(List<Map> mList) {
+        Map<String, Object> rootMenu = new HashMap<>();
+        rootMenu.put("name", "");
+        rootMenu.put("title", "教师中心");
+
+        List<Map> sList = new ArrayList<>();
+
+        // 假设教师需要看到自己的某些特定面板，如课程面板
+        Map<String, Object> subMenu = new HashMap<>();
+        subMenu.put("name", "course-panel"); // 这里填你想让老师直接看到的fxml名字
+        subMenu.put("title", "我的课程");
+        subMenu.put("isLeft", 1);
+        sList.add(subMenu);
+
+        rootMenu.put("sList", sList);
+        mList.add(rootMenu);
+    }
     private void addRegisterApplyMenu(List<Map> mList) {
-        // 只有管理员才显示
         if(!"ROLE_ADMIN".equals(AppStore.getJwt().getRole()))
             return;
 
-        Map<String,Object> menu = new HashMap<>();
+        // 1. 创建一个顶级父菜单
+        Map<String,Object> rootMenu = new HashMap<>();
+        rootMenu.put("name", "");
+        rootMenu.put("title", "审核管理");
 
-        menu.put("name","register-apply-list");
-        menu.put("title","账号申请审核");
-        menu.put("isLeft",1);
-        menu.put("sList", new ArrayList<>());
+        // 2. 将真正的面板作为子菜单放入
+        List<Map> sList = new ArrayList<>();
+        Map<String,Object> subMenu = new HashMap<>();
+        subMenu.put("name","register-apply-list");
+        subMenu.put("title","账号申请审核");
+        subMenu.put("isLeft",1);
+        sList.add(subMenu);
 
-        mList.add(menu);
-    }
-
-    private void addStudentSelfMenu(List<Map> mList) {
-        Map<String, Object> rootMenu = new HashMap<>();
-        rootMenu.put("name", "student-self-panel");
-        rootMenu.put("title", "我的信息");
-        rootMenu.put("isLeft", 1);
-        rootMenu.put("sList", new ArrayList<>());
+        rootMenu.put("sList", sList);
         mList.add(rootMenu);
     }
 
+    private void addStudentSelfMenu(List<Map> mList) {
+        // 1. 创建一个顶级父菜单（作为下拉容器）
+        Map<String, Object> rootMenu = new HashMap<>();
+        rootMenu.put("name", ""); // 父容器不需要名字
+        rootMenu.put("title", "个人中心");
+
+        // 2. 将真正的面板作为子菜单放入
+        List<Map> sList = new ArrayList<>();
+        Map<String, Object> subMenu = new HashMap<>();
+        subMenu.put("name", "student-self-panel"); // 这里对应你的 fxml 文件名
+        subMenu.put("title", "我的信息");
+        subMenu.put("isLeft", 1);
+        sList.add(subMenu);
+
+        rootMenu.put("sList", sList);
+        mList.add(rootMenu);
+    }
     /**
      * 点击菜单栏中的"退出"菜单，执行onLogoutMenuClick方法 加载登录页面，切换回登录界面
      * @param event

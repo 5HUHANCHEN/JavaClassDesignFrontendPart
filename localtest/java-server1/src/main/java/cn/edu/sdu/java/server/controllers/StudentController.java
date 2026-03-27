@@ -39,7 +39,7 @@ public class StudentController {
 
 
     @PostMapping("/getStudentList")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
     public DataResponse getStudentList(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.getStudentList(dataRequest);
     }
@@ -66,7 +66,7 @@ public class StudentController {
      */
 
     @PostMapping("/getStudentInfo")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
     public DataResponse getStudentInfo(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.getStudentInfo(dataRequest);
     }
@@ -80,7 +80,7 @@ public class StudentController {
      * @return 新建修改学生的主键 student_id 返回前端
      */
     @PostMapping("/studentEditSave")
-    @PreAuthorize(" hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
     public DataResponse studentEditSave(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.studentEditSave(dataRequest);
     }
@@ -108,14 +108,14 @@ public class StudentController {
      *
      */
     @PostMapping("/getStudentListExcl")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
     public ResponseEntity<StreamingResponseBody> getStudentListExcl(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.getStudentListExcl(dataRequest);
     }
 
 
     @PostMapping("/getStudentPageData")
-    @PreAuthorize(" hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
     public DataResponse getStudentPageData(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.getStudentPageData(dataRequest);
     }
@@ -124,32 +124,32 @@ public class StudentController {
         FamilyMember
      */
     @PostMapping("/getFamilyMemberList")
-    @PreAuthorize(" hasRole('ADMIN') or  hasRole('STUDENT')")
+    @PreAuthorize(" hasRole('ADMIN')or hasRole('TEACHER') or  hasRole('STUDENT')")
     public DataResponse getFamilyMemberList(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.getFamilyMemberList(dataRequest);
     }
 
     @PostMapping("/familyMemberSave")
-    @PreAuthorize(" hasRole('ADMIN') or  hasRole('STUDENT')")
+    @PreAuthorize(" hasRole('ADMIN')or hasRole('TEACHER') or  hasRole('STUDENT')")
     public DataResponse familyMemberSave(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.familyMemberSave(dataRequest);
     }
 
     @PostMapping("/familyMemberDelete")
-    @PreAuthorize(" hasRole('ADMIN') or  hasRole('STUDENT')")
+    @PreAuthorize(" hasRole('ADMIN') or hasRole('TEACHER')or  hasRole('STUDENT')")
     public DataResponse familyMemberDelete(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.familyMemberDelete(dataRequest);
     }
 
 
     @PostMapping("/importFeeDataWeb")
-    @PreAuthorize("hasRole('STUDENT')")
+    @PreAuthorize("hasRole('STUDENT')or hasRole('TEACHER')")
     public DataResponse importFeeDataWeb(@RequestParam Map<String,Object> request, @RequestParam("file") MultipartFile file) {
         return studentService.importFeeDataWeb(request, file);
     }
 
     @PostMapping("/getStudentIntroduceData")
-    @PreAuthorize("hasRole('STUDENT') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('STUDENT') or hasRole('TEACHER')or hasRole('ADMIN')")
     public DataResponse getStudentIntroduceData(@Valid @RequestBody DataRequest dataRequest) {
         return studentService.getStudentIntroduceData(dataRequest);
     }

@@ -1,235 +1,187 @@
-/* =========================
-   页面整体背景
-   ========================= */
+/* 全局背景底色 */
 .audit-root {
-    -fx-background-color:
-            radial-gradient(center 20% 20%, radius 100%, rgba(255,255,255,0.95), rgba(227,236,248,0.92)),
-            linear-gradient(to bottom right, #edf4ff, #dbeafe);
-    -fx-font-family: "Microsoft YaHei UI";
+    -fx-background-color: #F8FAFC; /* 极浅的高级蓝灰色背景 */
 }
 
-/* =========================
-   顶部横幅
-   ========================= */
+/* --- 顶部标题栏 --- */
 .top-banner {
-    -fx-padding: 24 28 24 28;
-    -fx-background-color: linear-gradient(to right, #2563eb, #3b82f6);
-    -fx-background-radius: 0 0 24 24;
-    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.28), 22, 0.25, 0, 6);
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 8, 0, 0, 2);
 }
-
 .page-title {
-    -fx-font-size: 26px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: white;
+    -fx-text-fill: #1E293B;
 }
-
 .page-subtitle {
     -fx-font-size: 13px;
-    -fx-text-fill: rgba(255,255,255,0.88);
+    -fx-text-fill: #64748B;
 }
 
-/* =========================
-   通用卡片
-   ========================= */
-.neo-card {
-    -fx-padding: 18 20 18 20;
-    -fx-background-color: rgba(255,255,255,0.92);
-    -fx-background-radius: 22;
-    -fx-border-radius: 22;
-    -fx-effect:
-            dropshadow(gaussian, rgba(255,255,255,0.96), 10, 0.15, -2, -2),
-            dropshadow(gaussian, rgba(148,163,184,0.22), 16, 0.20, 4, 4);
-}
-
-.section-title {
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #1e293b;
-}
-
-.field-label {
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #475569;
-}
-
-.count-label {
-    -fx-font-size: 12px;
-    -fx-text-fill: #64748b;
-}
-
-.hint-label {
-    -fx-font-size: 12px;
-    -fx-text-fill: #64748b;
-}
-
-/* =========================
-   顶部统计卡片
-   ========================= */
+/* --- 统计卡片 (带渐变和微阴影) --- */
 .stat-card {
-    -fx-padding: 18 20 18 20;
-    -fx-background-radius: 22;
-    -fx-border-radius: 22;
-    -fx-effect:
-            dropshadow(gaussian, rgba(255,255,255,0.92), 10, 0.16, -2, -2),
-            dropshadow(gaussian, rgba(148,163,184,0.25), 14, 0.20, 4, 4);
-}
-
-.stat-pending {
-    -fx-background-color: linear-gradient(to bottom right, #fff8db, #ffe7a3);
-}
-
-.stat-approved {
-    -fx-background-color: linear-gradient(to bottom right, #dcfce7, #bbf7d0);
-}
-
-.stat-rejected {
-    -fx-background-color: linear-gradient(to bottom right, #fee2e2, #fecaca);
-}
-
-.stat-title {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #334155;
-}
-
-.stat-number {
-    -fx-font-size: 32px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #0f172a;
-}
-
-.stat-desc {
-    -fx-font-size: 12px;
-    -fx-text-fill: #64748b;
-}
-
-/* =========================
-   输入框 / 下拉框
-   ========================= */
-.neo-input,
-.neo-combo {
-    -fx-background-color: #f8fbff;
-    -fx-background-radius: 12;
-    -fx-border-color: #dbeafe;
-    -fx-border-radius: 12;
-    -fx-padding: 8 12 8 12;
-    -fx-text-fill: #1e293b;
-}
-
-.neo-input:focused,
-.neo-combo:focused {
-    -fx-border-color: #60a5fa;
-    -fx-background-color: white;
-}
-
-/* =========================
-   按钮
-   ========================= */
-.neo-btn-primary,
-.neo-btn-info,
-.neo-btn-light,
-.neo-btn-success,
-.neo-btn-danger {
-    -fx-background-radius: 14;
-    -fx-padding: 8 18 8 18;
-    -fx-font-size: 13px;
-    -fx-font-weight: bold;
+    -fx-padding: 15 20 15 20;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0, 0, 4);
+    /* 鼠标悬浮时鼠标变小手 */
     -fx-cursor: hand;
 }
-
-.neo-btn-primary {
-    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
-    -fx-text-fill: white;
+.stat-pending {
+    -fx-background-color: linear-gradient(to bottom right, #FEF3C7, #FDE68A);
 }
+.stat-approved {
+    -fx-background-color: linear-gradient(to bottom right, #DCFCE7, #BBF7D0);
+}
+.stat-rejected {
+    -fx-background-color: linear-gradient(to bottom right, #FEE2E2, #FECACA);
+}
+.stat-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+}
+.stat-number {
+    -fx-font-size: 26px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0F172A;
+}
+
+/* --- 查询区域 --- */
+.query-card {
+    -fx-background-color: white;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 3);
+}
+.neo-input, .neo-combo {
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 6px;
+    -fx-border-color: transparent;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 13px;
+}
+.neo-input:focused, .neo-combo:focused {
+    -fx-background-color: white;
+    -fx-border-color: #3B82F6;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.3), 6, 0, 0, 0);
+}
+
+/* --- 按钮样式 (现代化扁平带悬浮特效) --- */
+.neo-btn-primary {
+    -fx-background-color: #3B82F6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+}
+.neo-btn-primary:hover { -fx-background-color: #2563EB; }
 
 .neo-btn-info {
-    -fx-background-color: linear-gradient(to right, #60a5fa, #3b82f6);
+    -fx-background-color: #10B981;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
 }
+.neo-btn-info:hover { -fx-background-color: #059669; }
 
 .neo-btn-light {
-    -fx-background-color: linear-gradient(to right, #f1f5f9, #e2e8f0);
-    -fx-text-fill: #334155;
+    -fx-background-color: #E2E8F0;
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+}
+.neo-btn-light:hover { -fx-background-color: #CBD5E1; }
+
+
+/* --- 表格主卡片区 --- */
+.table-card {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 15, 0, 0, 6);
+}
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #1E293B;
+}
+.count-label {
+    -fx-text-fill: #94A3B8;
+    -fx-font-size: 13px;
+    -fx-background-color: #F1F5F9;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 12px;
 }
 
-.neo-btn-success {
-    -fx-background-color: linear-gradient(to right, #22c55e, #16a34a);
-    -fx-text-fill: white;
-}
-
-.neo-btn-danger {
-    -fx-background-color: linear-gradient(to right, #ef4444, #dc2626);
-    -fx-text-fill: white;
-}
-
-.neo-btn-primary:hover,
-.neo-btn-info:hover,
-.neo-btn-light:hover,
-.neo-btn-success:hover,
-.neo-btn-danger:hover {
-    -fx-opacity: 0.92;
-}
-
-/* =========================
-   表格
-   ========================= */
+/* --- 极致美化的 TableView --- */
 .audit-table {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-table-cell-border-color: #e2e8f0;
-    -fx-padding: 4;
+    /* 增加行高，避免拥挤 */
+    -fx-fixed-cell-size: 50px;
 }
+/* 隐藏表格外部难看的边框 */
+.audit-table .box { -fx-background-color: transparent; }
 
+/* 表头美化 */
 .audit-table .column-header-background {
-    -fx-background-color: linear-gradient(to right, #eff6ff, #dbeafe);
-    -fx-background-radius: 14 14 0 0;
-    -fx-padding: 4;
+    -fx-background-color: #F8FAFC;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-border-color: transparent transparent #E2E8F0 transparent;
+    -fx-border-width: 0 0 1 0;
 }
-
-.audit-table .column-header,
-.audit-table .filler {
+.audit-table .column-header {
     -fx-background-color: transparent;
-    -fx-border-color: transparent transparent #dbeafe transparent;
+    -fx-size: 45px;
 }
-
 .audit-table .column-header .label {
-    -fx-text-fill: #1e40af;
-    -fx-font-size: 13px;
+    -fx-text-fill: #64748B;
     -fx-font-weight: bold;
-    -fx-alignment: CENTER;
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 10px;
 }
 
+/* 表格行美化 (底部加极细的浅色线条) */
 .audit-table .table-row-cell {
     -fx-background-color: white;
-    -fx-border-color: transparent transparent #eef2f7 transparent;
-    -fx-padding: 2;
+    -fx-border-color: transparent transparent #F1F5F9 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-table-cell-border-color: transparent;
+}
+/* 奇偶行斑马纹 (可选，让数据更容易看清) */
+.audit-table .table-row-cell:odd {
+    -fx-background-color: #FAFCFF;
 }
 
+/* *** 表格悬浮(Hover)高亮特效 *** */
 .audit-table .table-row-cell:hover {
-    -fx-background-color: #f8fbff;
+    -fx-background-color: #EFF6FF; /* 淡淡的蓝色高亮 */
+    -fx-cursor: hand;
 }
 
-.audit-table .table-row-cell:selected {
-    -fx-background-color: #dbeafe;
-}
-
+/* 单元格内容垂直居中 */
 .audit-table .table-cell {
-    -fx-text-fill: #0f172a;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 10px;
+    -fx-text-fill: #334155;
     -fx-font-size: 13px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-padding: 10 8 10 8;
-    -fx-border-color: transparent;
 }
 
-/* 滚动条 */
-.audit-table .scroll-bar:vertical,
-.audit-table .scroll-bar:horizontal {
+/* 美化滚动条 */
+.audit-table .scroll-bar:vertical, .audit-table .scroll-bar:horizontal {
     -fx-background-color: transparent;
 }
-
-.audit-table .thumb {
-    -fx-background-color: #cbd5e1;
-    -fx-background-radius: 10;
+.audit-table .scroll-bar:vertical .thumb, .audit-table .scroll-bar:horizontal .thumb {
+    -fx-background-color: #CBD5E1;
+    -fx-background-radius: 4px;
+}
+.audit-table .scroll-bar:vertical .thumb:hover, .audit-table .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #94A3B8;
 }

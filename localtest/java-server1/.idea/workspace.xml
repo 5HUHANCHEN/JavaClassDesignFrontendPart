@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29492169-b53e-456d-bcfd-26e8b98b9b1e" name="Changes" comment="Changes" />
+    <list default="true" id="29492169-b53e-456d-bcfd-26e8b98b9b1e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/util/ToastUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/ScoreEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/ScoreEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/ScoreTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/ScoreTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentLeaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentLeaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentSelfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentSelfController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentStatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/StudentStatisticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/base/MainFrameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/base/MainFrameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/base/RegisterApplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/java/com/teach/javafx/controller/base/RegisterApplyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/base/register-apply-list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/base/register-apply-list.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/base/student-self-panel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/base/student-self-panel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/css/register-apply-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/css/register-apply-list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/css/student-self-panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/../java-fx1/src/main/resources/com/teach/javafx/css/student-self-panel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/java-server.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/java-server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/sdu/java/server/controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/sdu/java/server/controllers/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/sdu/java/server/models/MenuInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/sdu/java/server/models/MenuInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/sdu/java/server/controllers/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/edu/sdu/java/server/controllers/StudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/edu/sdu/java/server/models/MenuInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/edu/sdu/java/server/models/MenuInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +60,31 @@
     </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="moudle" />
+                    <option name="lastUsedInstant" value="1774596932" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1774596931" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/../.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -55,40 +105,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JavaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.cleanPackage.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java-server [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java-server [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java-server [validate].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.JavaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/java/localtest/java-server1&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.59195405&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JavaServerApplication.executor": "Run",
+    "Maven.cleanPackage.executor": "Run",
+    "Maven.java-server [clean].executor": "Run",
+    "Maven.java-server [compile].executor": "Run",
+    "Maven.java-server [validate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.JavaServerApplication.executor": "Run",
+    "git-widget-placeholder": "moudle",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/java/localtest/java-server1",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.59195405",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "repository"
+    ],
+    "DatabaseDriversLRU": [
+      "mysql_aurora"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="debugInitializationType" value="AUTO" />
     <option name="notificationShown" value="true" />
@@ -212,8 +266,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
       </set>
     </attachedChunks>
   </component>
@@ -254,7 +308,22 @@
       <workItem from="1773743842064" duration="457000" />
       <workItem from="1773744306506" duration="36000" />
       <workItem from="1773744424504" duration="3685000" />
-      <workItem from="1773748458259" duration="309000" />
+      <workItem from="1773748458259" duration="1241000" />
+      <workItem from="1773751139994" duration="7000" />
+      <workItem from="1773801108587" duration="6311000" />
+      <workItem from="1773826190097" duration="308000" />
+      <workItem from="1773885598769" duration="6000" />
+      <workItem from="1773885628762" duration="1003000" />
+      <workItem from="1773910520135" duration="1946000" />
+      <workItem from="1773915989634" duration="90000" />
+      <workItem from="1773916092633" duration="599000" />
+      <workItem from="1773917083295" duration="401000" />
+      <workItem from="1773918624774" duration="3073000" />
+      <workItem from="1774003437281" duration="2012000" />
+      <workItem from="1774490458501" duration="3782000" />
+      <workItem from="1774591100376" duration="2782000" />
+      <workItem from="1774594243311" duration="1244000" />
+      <workItem from="1774595496796" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="lxq">
       <option name="closed" value="true" />
