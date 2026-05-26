@@ -1,0 +1,78 @@
+.ai-root {
+    -fx-background-color: linear-gradient(to bottom right, #f7fafc, #eaf4ff);
+    -fx-font-family: "Microsoft YaHei UI";
+}
+
+.ai-header {
+    -fx-background-color: transparent;
+}
+
+.ai-banner {
+    -fx-background-color: linear-gradient(to right, #ffffff, #f4f8ff);
+    -fx-background-radius: 26;
+    -fx-padding: 18 20 18 20;
+    -fx-border-color: rgba(203, 213, 225, 0.8);
+    -fx-border-radius: 26;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.12), 18, 0.15, 0, 6);
+}
+
+.ai-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.ai-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+.ai-split-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0 16 16 16;
+}
+
+.question-card,
+.answer-card {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(226, 232, 240, 0.95);
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.08), 14, 0.1, 0, 5);
+}
+
+.section-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.question-area,
+.answer-area {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-font-size: 13px;
+}
+
+.primary-action {
+    -fx-background-color: linear-gradient(to right, #0ea5e9, #2563eb);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 18;
+    -fx-padding: 10 18 10 18;
+}
+
+.ghost-action {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #2563eb;
+    -fx-font-weight: bold;
+    -fx-background-radius: 18;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 18;
+    -fx-padding: 10 16 10 16;
+}

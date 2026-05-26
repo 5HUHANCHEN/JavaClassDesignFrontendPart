@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.teach.javafx.controller.CourseScheduleController"
+            style="-fx-background-image: url('/shanda1.jpg'); -fx-background-repeat: no-repeat; -fx-background-size: cover;">
+    <top>
+        <VBox spacing="8" style="-fx-background-color: rgba(255, 255, 255, 0.90); -fx-padding: 15;">
+            <HBox alignment="CENTER" spacing="15">
+                <Label text="当前周数：" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <TextField fx:id="weekField" prefWidth="80" text="1" style="-fx-font-size: 18px; -fx-pref-height: 35px;"/>
+                <Button text="-" onAction="#onMinusWeekClick" style="-fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 35px;"/>
+                <Button text="+" onAction="#onPlusWeekClick" style="-fx-font-size: 18px; -fx-pref-width: 50px; -fx-pref-height: 35px;"/>
+                <Button text="刷新" onAction="#onQueryButtonClick" style="-fx-font-size: 16px; -fx-pref-width: 70px; -fx-pref-height: 35px;"/>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+                <Button text="新增课表课程" onAction="#onAddCourseButtonClick"
+                        style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-height: 35px; -fx-pref-width: 140px;"/>
+            </HBox>
+            <Label fx:id="statusLabel" text="课表管理页面已就绪。"
+                   style="-fx-background-color: rgba(255,255,255,0.82); -fx-padding: 8 12 8 12; -fx-background-radius: 10; -fx-text-fill: #23415f;"/>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="dataTableView" style="-fx-pref-height: 430px; -fx-max-height: 430px;">
+            <columns>
+                <TableColumn fx:id="timeColumn" prefWidth="120.0" text="上课时间"/>
+                <TableColumn fx:id="mondayColumn" prefWidth="120.0" text="星期一"/>
+                <TableColumn fx:id="tuesdayColumn" prefWidth="120.0" text="星期二"/>
+                <TableColumn fx:id="wednesdayColumn" prefWidth="120.0" text="星期三"/>
+                <TableColumn fx:id="thursdayColumn" prefWidth="120.0" text="星期四"/>
+                <TableColumn fx:id="fridayColumn" prefWidth="120.0" text="星期五"/>
+                <TableColumn fx:id="saturdayColumn" prefWidth="120.0" text="星期六"/>
+                <TableColumn fx:id="sundayColumn" prefWidth="120.0" text="星期日"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

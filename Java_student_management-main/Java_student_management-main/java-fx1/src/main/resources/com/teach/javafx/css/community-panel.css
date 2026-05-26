@@ -1,0 +1,155 @@
+.community-root {
+    -fx-background-color: linear-gradient(to bottom right, #f5f7fb, #edf2ff);
+    -fx-font-family: "Microsoft YaHei UI";
+}
+
+.community-banner {
+    -fx-background-color: linear-gradient(to right, #ffffff, #f9fbff);
+    -fx-background-radius: 26;
+    -fx-padding: 18 20 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.12), 18, 0.15, 0, 6);
+}
+
+.community-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.community-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+.community-toolbar {
+    -fx-background-color: rgba(255,255,255,0.88);
+    -fx-background-radius: 18;
+    -fx-padding: 10 14 10 14;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 12, 0.1, 0, 3);
+}
+
+.primary-action {
+    -fx-background-color: linear-gradient(to right, #1d9bf0, #2563eb);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 18;
+    -fx-padding: 10 18 10 18;
+}
+
+.ghost-action {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #2563eb;
+    -fx-font-weight: bold;
+    -fx-background-radius: 18;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 18;
+    -fx-padding: 10 16 10 16;
+}
+
+.feed-summary {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.post-list,
+.comment-list {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.post-list .list-cell,
+.comment-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 10 0;
+}
+
+.post-list .list-cell:selected,
+.comment-list .list-cell:selected {
+    -fx-background-color: transparent;
+}
+
+.post-card {
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-padding: 16 16 16 16;
+    -fx-spacing: 8;
+    -fx-border-color: rgba(226,232,240,0.95);
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 12, 0.1, 0, 4);
+}
+
+.post-category {
+    -fx-text-fill: #1d4ed8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-background-color: #dbeafe;
+    -fx-background-radius: 999;
+    -fx-padding: 4 10 4 10;
+}
+
+.post-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.post-summary {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+}
+
+.post-meta {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+
+.editor-card,
+.comment-card {
+    -fx-background-color: rgba(255,255,255,0.95);
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(226,232,240,0.95);
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 14, 0.1, 0, 5);
+}
+
+.editor-area,
+.comment-editor {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+}
+
+.post-info {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+}
+
+.comment-item-card {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 16;
+    -fx-padding: 12 12 12 12;
+    -fx-spacing: 4;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 16;
+}
+
+.comment-author {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.comment-time {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}
+
+.comment-content {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+}

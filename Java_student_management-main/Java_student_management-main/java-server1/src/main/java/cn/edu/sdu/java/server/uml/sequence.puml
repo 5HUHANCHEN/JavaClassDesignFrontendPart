@@ -1,0 +1,59 @@
+@startuml
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #334155
+  LifeLineBorderColor #64748B
+  ParticipantBorderColor #2563EB
+  ParticipantBackgroundColor #EFF6FF
+}
+
+title 后端主要业务时序图
+
+actor "用户" as User
+participant "JavaFX 客户端" as Client
+participant "AuthController" as AuthController
+participant "AuthService" as AuthService
+participant "AuthenticationManager" as AuthManager
+participant "UserRepository" as UserRepository
+participant "JwtService" as JwtService
+database "MySQL" as DB
+
+== 登录认证 ==
+User -> Client : 输入账号和密码
+Client -> AuthController : POST /auth/login\nLoginRequest
+AuthController -> AuthService : authenticateUser(loginRequest)
+AuthService -> AuthManager : authenticate(username, password)
+AuthManager -> UserRepository : findByUserName(username)
+UserRepository -> DB : 查询 user/person/user_type
+DB --> UserRepository : User
+UserRepository --> AuthManager : UserDetails
+AuthManager --> AuthService : Authentication
+AuthService -> UserRepository : 更新 lastLoginTime/loginCount
+UserRepository -> DB : save(user)
+AuthService -> JwtService : generateToken(userDetails)
+JwtService --> AuthService : JWT
+AuthService --> AuthController : JwtResponse
+AuthController --> Client : 200 OK + token
+Client --> User : 进入主界面
+
+== 查询学生我的信息 ==
+participant "JwtAuthenticationFilter" as JwtFilter
+participant "StudentController" as StudentController
+participant "StudentService" as StudentService
+participant "StudentRepository" as StudentRepository
+
+User -> Client : 打开我的信息
+Client -> JwtFilter : POST /api/student/getStudentInfo\nAuthorization: Bearer token
+JwtFilter -> JwtService : 校验并解析 token
+JwtService --> JwtFilter : username
+JwtFilter -> StudentController : 放行请求
+StudentController -> StudentService : getStudentInfo(dataRequest)
+StudentService -> StudentRepository : findByPersonPersonId(...)
+StudentRepository -> DB : 查询 student/person
+DB --> StudentRepository : Student + Person
+StudentRepository --> StudentService : Student
+StudentService --> StudentController : DataResponse(code=0, data=form)
+StudentController --> Client : 200 OK + 学生资料
+Client --> User : 展示资料与头像
+
+@enduml

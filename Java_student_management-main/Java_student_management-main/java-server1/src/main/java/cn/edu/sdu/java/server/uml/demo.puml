@@ -1,0 +1,81 @@
+@startuml
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam component {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+title 教学管理系统后端部署与模块图
+
+node "用户电脑" {
+  component "JavaFX 客户端\njava-fx1" as JavaFx
+}
+
+node "应用服务器" {
+  component "Spring Boot 后端\njava-server1:22223" as Server
+
+  package "安全模块" {
+    component "SecurityConfiguration" as SecurityConfig
+    component "JwtAuthenticationFilter" as JwtFilter
+    component "JwtService" as JwtService
+  }
+
+  package "Web 接口模块" {
+    component "AuthController" as AuthController
+    component "StudentController" as StudentController
+    component "TeacherController" as TeacherController
+    component "CourseController" as CourseController
+    component "ScoreController" as ScoreController
+    component "HomeworkController" as HomeworkController
+    component "CommunityController" as CommunityController
+    component "AiController" as AiController
+  }
+
+  package "业务服务模块" {
+    component "AuthService" as AuthService
+    component "StudentService" as StudentService
+    component "TeacherService" as TeacherService
+    component "CourseService" as CourseService
+    component "ScoreService" as ScoreService
+    component "HomeworkService" as HomeworkService
+    component "CommunityService" as CommunityService
+    component "AiService" as AiService
+  }
+
+  package "数据访问模块" {
+    component "Spring Data JPA Repository" as Repository
+    component "JPA Entity Models" as Entity
+  }
+}
+
+database "MySQL\njava_2_20" as MySQL
+cloud "DeepSeek API" as DeepSeek
+
+JavaFx --> Server : HTTP/JSON\nlocalhost:22223
+Server --> SecurityConfig
+SecurityConfig --> JwtFilter
+JwtFilter --> JwtService
+
+AuthController --> AuthService
+StudentController --> StudentService
+TeacherController --> TeacherService
+CourseController --> CourseService
+ScoreController --> ScoreService
+HomeworkController --> HomeworkService
+CommunityController --> CommunityService
+AiController --> AiService
+
+AuthService --> Repository
+StudentService --> Repository
+TeacherService --> Repository
+CourseService --> Repository
+ScoreService --> Repository
+HomeworkService --> Repository
+CommunityService --> Repository
+Repository --> Entity
+Repository --> MySQL : JDBC
+AiService --> DeepSeek : HTTPS
+
+@enduml

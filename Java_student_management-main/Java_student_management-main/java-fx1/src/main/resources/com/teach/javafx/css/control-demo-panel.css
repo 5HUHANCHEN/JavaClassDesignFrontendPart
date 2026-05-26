@@ -1,0 +1,22 @@
+.demo-group {
+    -fx-background-color: rgba(255, 255, 255, 0.86);
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(226, 232, 240, 0.92);
+    -fx-border-radius: 22;
+    -fx-padding: 16;
+}
+
+.demo-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.dark-mode .demo-group {
+    -fx-background-color: rgba(15, 23, 42, 0.82);
+    -fx-border-color: rgba(71, 85, 105, 0.86);
+}
+
+.dark-mode .demo-title {
+    -fx-text-fill: #e2e8f0;
+}

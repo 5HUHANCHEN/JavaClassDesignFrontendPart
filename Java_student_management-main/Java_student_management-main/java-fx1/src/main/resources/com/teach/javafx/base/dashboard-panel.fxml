@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teach.javafx.controller.DashboardController">
+    <styleClass>
+        <String fx:value="module-root" />
+        <String fx:value="dashboard-root" />
+    </styleClass>
+    <top>
+        <VBox spacing="8" styleClass="dashboard-header">
+            <padding>
+                <Insets top="20" right="24" bottom="12" left="24" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label fx:id="welcomeLabel" styleClass="page-title" text="欢迎回来" />
+                    <Label fx:id="roleLabel" styleClass="page-subtitle" text="当前身份" />
+                </VBox>
+                <Button onAction="#onRefreshButtonClick" styleClass="secondary-button" text="刷新" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="dashboard-scroll">
+            <content>
+                <VBox spacing="18" styleClass="dashboard-content">
+                    <padding>
+                        <Insets top="12" right="24" bottom="24" left="24" />
+                    </padding>
+                    <FlowPane fx:id="kpiPane" hgap="12" vgap="12" />
+                    <HBox spacing="16" styleClass="dashboard-row">
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <styleClass>
+                                <String fx:value="dashboard-card" />
+                                <String fx:value="list-card" />
+                            </styleClass>
+                            <Label styleClass="section-title" text="待办事项" />
+                            <VBox fx:id="todoBox" spacing="8" />
+                        </VBox>
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <styleClass>
+                                <String fx:value="dashboard-card" />
+                                <String fx:value="list-card" />
+                            </styleClass>
+                            <Label styleClass="section-title" text="最近动态" />
+                            <VBox fx:id="recentBox" spacing="8" />
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="16" styleClass="dashboard-row">
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <styleClass>
+                                <String fx:value="dashboard-card" />
+                                <String fx:value="chart-card" />
+                            </styleClass>
+                            <Label styleClass="section-title" text="成绩概况" />
+                            <BarChart fx:id="scoreBarChart" animated="false" legendVisible="false" prefHeight="260">
+                                <xAxis>
+                                    <CategoryAxis label="课程" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="分数" />
+                                </yAxis>
+                            </BarChart>
+                            <VBox fx:id="scoreValueBox" spacing="4" />
+                        </VBox>
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <styleClass>
+                                <String fx:value="dashboard-card" />
+                                <String fx:value="chart-card" />
+                            </styleClass>
+                            <Label styleClass="section-title" text="作业状态" />
+                            <PieChart fx:id="homeworkPieChart" animated="false" legendVisible="true" prefHeight="260" />
+                            <VBox fx:id="homeworkValueBox" spacing="4" />
+                        </VBox>
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <styleClass>
+                                <String fx:value="dashboard-card" />
+                                <String fx:value="chart-card" />
+                            </styleClass>
+                            <Label styleClass="section-title" text="请假状态" />
+                            <PieChart fx:id="leavePieChart" animated="false" legendVisible="true" prefHeight="260" />
+                            <VBox fx:id="leaveValueBox" spacing="4" />
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="status-bar" text="首页数据准备中" BorderPane.alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="8" right="16" bottom="8" left="16" />
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>

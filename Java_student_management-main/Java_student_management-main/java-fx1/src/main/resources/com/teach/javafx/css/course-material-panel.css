@@ -1,0 +1,79 @@
+.course-material-root {
+    -fx-background-color: #f6f8fb;
+}
+
+.course-material-root .panel-header,
+.course-material-root .status-bar {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+}
+
+.course-material-root .content-split {
+    -fx-background-color: transparent;
+    -fx-padding: 16 20 16 20;
+}
+
+.course-material-root .table-pane,
+.course-material-root .detail-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8;
+    -fx-padding: 12;
+}
+
+.course-material-root .section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.course-material-root .button-row {
+    -fx-padding: 4 0 0 0;
+}
+
+.course-material-root .primary-button {
+    -fx-background-color: #2563eb;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.course-material-root .primary-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.course-material-root .danger-button {
+    -fx-background-color: #dc2626;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+}
+
+.course-material-root .danger-button:hover {
+    -fx-background-color: #b91c1c;
+}
+
+.course-material-root .status-bar {
+    -fx-border-color: #e5e7eb transparent transparent transparent;
+    -fx-text-fill: #64748b;
+}
+
+.dark-mode .course-material-root {
+    -fx-background-color: #111827;
+}
+
+.dark-mode .course-material-root .panel-header,
+.dark-mode .course-material-root .status-bar,
+.dark-mode .course-material-root .table-pane,
+.dark-mode .course-material-root .detail-pane {
+    -fx-background-color: #1f2937;
+    -fx-border-color: #374151;
+}
+
+.dark-mode .course-material-root .section-title {
+    -fx-text-fill: #f9fafb;
+}
+
+.dark-mode .course-material-root .status-bar {
+    -fx-text-fill: #cbd5e1;
+}

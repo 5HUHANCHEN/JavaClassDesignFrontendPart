@@ -1,0 +1,69 @@
+.divination-root {
+    -fx-background-color: #f7fafc;
+}
+
+.divination-header,
+.divination-status {
+    -fx-background-color: rgba(255, 255, 255, 0.94);
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+}
+
+.divination-tabs {
+    -fx-background-color: transparent;
+}
+
+.divination-tabs .tab-header-area .tab-header-background {
+    -fx-background-color: #eef2f7;
+}
+
+.divination-form,
+.divination-report-box {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.divination-report-box .text-area {
+    -fx-font-family: "Microsoft YaHei UI";
+    -fx-font-size: 14px;
+}
+
+.divination-report-box .text-area .content {
+    -fx-background-color: #fbfdff;
+}
+
+.divination-summary {
+    -fx-text-fill: #2563eb;
+    -fx-font-weight: bold;
+}
+
+.divination-status {
+    -fx-border-color: #e5e7eb transparent transparent transparent;
+    -fx-text-fill: #64748b;
+}
+
+.dark-mode .divination-root,
+.dark-mode .divination-tabs .tab-header-area .tab-header-background {
+    -fx-background-color: #111827;
+}
+
+.dark-mode .divination-header,
+.dark-mode .divination-status,
+.dark-mode .divination-form,
+.dark-mode .divination-report-box {
+    -fx-background-color: #1f2937;
+    -fx-border-color: #374151;
+}
+
+.dark-mode .divination-summary {
+    -fx-text-fill: #93c5fd;
+}
+
+.dark-mode .divination-status {
+    -fx-text-fill: #cbd5e1;
+}
+
+.dark-mode .divination-report-box .text-area .content {
+    -fx-background-color: #111827;
+}

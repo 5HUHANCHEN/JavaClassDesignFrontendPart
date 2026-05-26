@@ -1,0 +1,22 @@
+.stats-summary {
+    -fx-font-size: 13px;
+    -fx-text-fill: #475569;
+}
+
+.stats-chart-card {
+    -fx-background-color: rgba(255, 255, 255, 0.88);
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(226, 232, 240, 0.92);
+    -fx-border-radius: 22;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(148, 163, 184, 0.16), 18, 0.16, 0, 8);
+}
+
+.dark-mode .stats-chart-card {
+    -fx-background-color: rgba(15, 23, 42, 0.82);
+    -fx-border-color: rgba(71, 85, 105, 0.86);
+}
+
+.dark-mode .stats-summary {
+    -fx-text-fill: #cbd5e1;
+}

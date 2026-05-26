@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="760.0" prefWidth="1180.0"
+            styleClass="ai-root"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.teach.javafx.controller.AiAssistantController">
+    <top>
+        <VBox spacing="12.0" styleClass="ai-header">
+            <padding>
+                <Insets bottom="12.0" left="16.0" right="16.0" top="16.0" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="ai-banner">
+                <children>
+                    <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label styleClass="ai-title" text="智能助手" />
+                            <Label styleClass="ai-subtitle"
+                                   text="用于查询首页待办、系统说明、学生、教师、课程资料、课表、成绩、作业、请假、账号申请、校园社区和统计分析。API Key 保存在后端，前端只发送问题。"
+                                   wrapText="true" />
+                        </children>
+                    </VBox>
+                    <FlowPane alignment="CENTER_RIGHT" hgap="8.0" vgap="8.0" prefWrapLength="520.0">
+                        <children>
+                            <Button mnemonicParsing="false" onAction="#onSystemGuideQuestionClick" styleClass="ghost-action" text="系统功能" />
+                            <Button mnemonicParsing="false" onAction="#onTodoQuestionClick" styleClass="ghost-action" text="我的待办" />
+                            <Button mnemonicParsing="false" onAction="#onMaterialQuestionClick" styleClass="ghost-action" text="课程资料" />
+                            <Button mnemonicParsing="false" onAction="#onSubmitHomeworkQuestionClick" styleClass="ghost-action" text="提交作业" />
+                            <Button mnemonicParsing="false" onAction="#onUploadMaterialQuestionClick" styleClass="ghost-action" text="上传资料" />
+                            <Button mnemonicParsing="false" onAction="#onCourseQuestionClick" styleClass="ghost-action" text="课程示例" />
+                            <Button mnemonicParsing="false" onAction="#onLeaveQuestionClick" styleClass="ghost-action" text="请假示例" />
+                            <Button mnemonicParsing="false" onAction="#onCommunityQuestionClick" styleClass="ghost-action" text="社区示例" />
+                        </children>
+                    </FlowPane>
+                </children>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.42" styleClass="ai-split-pane">
+            <items>
+                <VBox spacing="12.0" styleClass="question-card">
+                    <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                    </padding>
+                    <Label styleClass="section-title" text="输入问题" />
+                    <TextArea fx:id="questionArea"
+                              prefRowCount="18"
+                              promptText="例如：请介绍这个系统有哪些模块；或者：请帮我总结最近的请假情况；或者：哪些学生的平均成绩比较高？"
+                              styleClass="question-area"
+                              wrapText="true"
+                              VBox.vgrow="ALWAYS" />
+                    <FlowPane alignment="CENTER_RIGHT" hgap="10.0" vgap="8.0">
+                        <children>
+                            <Button mnemonicParsing="false" onAction="#onClearButtonClick" styleClass="ghost-action" text="清空" />
+                            <Button fx:id="askButton" mnemonicParsing="false" onAction="#onAskButtonClick" styleClass="primary-action" text="发送问题" />
+                        </children>
+                    </FlowPane>
+                </VBox>
+                <VBox spacing="12.0" styleClass="answer-card">
+                    <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                    </padding>
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <children>
+                            <Label styleClass="section-title" text="助手回答" />
+                            <HBox HBox.hgrow="ALWAYS" />
+                            <Label fx:id="statusLabel" styleClass="status-label" text="等待输入问题。" />
+                        </children>
+                    </HBox>
+                    <TextArea fx:id="answerArea"
+                              editable="false"
+                              prefRowCount="20"
+                              promptText="这里会显示智能助手的回答。"
+                              styleClass="answer-area"
+                              wrapText="true"
+                              VBox.vgrow="ALWAYS" />
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>
