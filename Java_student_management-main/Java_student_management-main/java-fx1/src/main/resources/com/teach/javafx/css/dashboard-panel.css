@@ -1,0 +1,198 @@
+.dashboard-root {
+    -fx-background-color: #f6f8fb;
+}
+
+.dashboard-header {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+}
+
+.dashboard-scroll {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.dashboard-content {
+    -fx-background-color: transparent;
+}
+
+.dashboard-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8;
+    -fx-padding: 14;
+}
+
+.kpi-card {
+    -fx-pref-width: 170;
+    -fx-min-height: 96;
+}
+
+.kpi-title {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+.kpi-value {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.kpi-unit {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+.tone-blue {
+    -fx-border-color: #bfdbfe;
+}
+
+.tone-green {
+    -fx-border-color: #bbf7d0;
+}
+
+.tone-purple {
+    -fx-border-color: #ddd6fe;
+}
+
+.tone-orange,
+.tone-amber {
+    -fx-border-color: #fed7aa;
+}
+
+.tone-red {
+    -fx-border-color: #fecaca;
+}
+
+.tone-indigo {
+    -fx-border-color: #c7d2fe;
+}
+
+.tone-teal {
+    -fx-border-color: #99f6e4;
+}
+
+.list-card {
+    -fx-min-width: 320;
+}
+
+.chart-card {
+    -fx-min-width: 280;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.todo-button {
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8;
+    -fx-padding: 10 12;
+    -fx-text-fill: #334155;
+}
+
+.todo-button:hover {
+    -fx-background-color: #eef6ff;
+    -fx-border-color: #93c5fd;
+}
+
+.recent-item {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 8;
+    -fx-padding: 10 12;
+}
+
+.recent-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.recent-meta,
+.empty-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.chart-value-row {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 6;
+    -fx-padding: 6 8;
+}
+
+.chart-value-name {
+    -fx-font-size: 12px;
+    -fx-text-fill: #475569;
+}
+
+.chart-value-number {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.secondary-button {
+    -fx-background-color: #0f766e;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #115e59;
+}
+
+.status-bar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb transparent transparent transparent;
+    -fx-text-fill: #64748b;
+}
+
+.dark-mode .dashboard-root {
+    -fx-background-color: #111827;
+}
+
+.dark-mode .dashboard-header,
+.dark-mode .dashboard-card,
+.dark-mode .status-bar {
+    -fx-background-color: #1f2937;
+    -fx-border-color: #374151;
+}
+
+.dark-mode .kpi-value,
+.dark-mode .section-title,
+.dark-mode .recent-title {
+    -fx-text-fill: #f9fafb;
+}
+
+.dark-mode .kpi-title,
+.dark-mode .kpi-unit,
+.dark-mode .recent-meta,
+.dark-mode .empty-label,
+.dark-mode .status-bar {
+    -fx-text-fill: #cbd5e1;
+}
+
+.dark-mode .todo-button,
+.dark-mode .recent-item,
+.dark-mode .chart-value-row {
+    -fx-background-color: #111827;
+    -fx-border-color: #374151;
+    -fx-text-fill: #e5e7eb;
+}
+
+.dark-mode .chart-value-name {
+    -fx-text-fill: #cbd5e1;
+}
+
+.dark-mode .chart-value-number {
+    -fx-text-fill: #f9fafb;
+}

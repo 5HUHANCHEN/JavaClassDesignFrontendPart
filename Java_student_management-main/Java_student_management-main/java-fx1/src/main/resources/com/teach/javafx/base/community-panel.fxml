@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="760.0" prefWidth="1220.0" styleClass="community-root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teach.javafx.controller.CommunityController">
+    <top>
+        <VBox spacing="12.0" styleClass="community-top">
+            <padding>
+                <Insets bottom="10.0" left="14.0" right="14.0" top="14.0" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="community-banner">
+                <children>
+                    <VBox spacing="4.0">
+                        <children>
+                            <Label styleClass="community-title" text="校园社区" />
+                            <Label styleClass="community-subtitle" text="像微博一样浏览动态、发帖交流、分享图片/视频链接与学习资源" />
+                        </children>
+                    </VBox>
+                    <HBox HBox.hgrow="ALWAYS" />
+                    <Button mnemonicParsing="false" onAction="#onNewPostButtonClick" styleClass="primary-action" text="发布新帖" />
+                    <Button mnemonicParsing="false" onAction="#onRefreshButtonClick" styleClass="ghost-action" text="刷新动态" />
+                </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="community-toolbar">
+                <children>
+                    <Label text="查看范围" />
+                    <ComboBox fx:id="scopeComboBox" prefWidth="120.0" />
+                    <Label text="帖子分类" />
+                    <ComboBox fx:id="filterCategoryComboBox" prefWidth="130.0" />
+                    <Label text="搜索" />
+                    <TextField fx:id="keywordField" prefWidth="220.0" promptText="输入标题、分类或内容关键字" />
+                    <Button mnemonicParsing="false" onAction="#onQueryButtonClick" styleClass="ghost-action" text="筛选帖子" />
+                    <HBox HBox.hgrow="ALWAYS" />
+                    <Label fx:id="feedSummaryLabel" styleClass="feed-summary" text="共 0 条帖子" />
+                </children>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.42">
+            <items>
+                <VBox spacing="10.0" styleClass="feed-pane">
+                    <padding>
+                        <Insets bottom="14.0" left="14.0" right="10.0" top="8.0" />
+                    </padding>
+                    <Label styleClass="section-title" text="帖子动态流" />
+                    <ListView fx:id="postListView" styleClass="post-list" VBox.vgrow="ALWAYS" />
+                </VBox>
+                <VBox spacing="12.0" styleClass="detail-pane">
+                    <padding>
+                        <Insets bottom="14.0" left="12.0" right="14.0" top="8.0" />
+                    </padding>
+                    <Label styleClass="section-title" text="帖子详情与编辑" />
+                    <VBox spacing="12.0" styleClass="editor-card">
+                        <padding>
+                            <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                        </padding>
+                        <GridPane hgap="10.0" vgap="10.0">
+                            <children>
+                                <Label text="帖子分类" GridPane.rowIndex="0" />
+                                <ComboBox fx:id="editCategoryComboBox" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <Label text="帖子标题" GridPane.rowIndex="1" />
+                                <TextField fx:id="titleField" promptText="给帖子起一个清晰的标题" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="媒体类型" GridPane.rowIndex="2" />
+                                <ComboBox fx:id="mediaTypeComboBox" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label text="媒体地址" GridPane.rowIndex="3" />
+                                <TextField fx:id="mediaUrlField" promptText="填写图片或视频的 URL 地址" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label text="外部链接" GridPane.rowIndex="4" />
+                                <TextField fx:id="linkUrlField" promptText="填写资料链接、超文本链接等 URL" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            </children>
+                        </GridPane>
+                        <Label fx:id="postInfoLabel" styleClass="post-info" text="当前正在创建新帖子。" wrapText="true" />
+                        <Label text="帖子内容" />
+                        <TextArea fx:id="contentArea" prefRowCount="8" promptText="像发微博一样写下你的内容，也可以附上图片、视频和链接地址" styleClass="editor-area" wrapText="true" VBox.vgrow="ALWAYS" />
+                        <FlowPane hgap="10.0" vgap="8.0">
+                            <children>
+                                <Label text="媒体地址：" />
+                                <Hyperlink fx:id="mediaLink" text="暂无" />
+                                <Label text="外部链接：" />
+                                <Hyperlink fx:id="externalLink" text="暂无" />
+                            </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_RIGHT" hgap="10.0">
+                            <children>
+                                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onSaveButtonClick" styleClass="primary-action" text="保存帖子" />
+                                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClick" styleClass="ghost-action" text="删除帖子" />
+                            </children>
+                        </FlowPane>
+                    </VBox>
+                    <VBox spacing="10.0" styleClass="comment-card" VBox.vgrow="ALWAYS">
+                        <padding>
+                            <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                        </padding>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label styleClass="section-title" text="评论区" />
+                                <HBox HBox.hgrow="ALWAYS" />
+                                <Button fx:id="deleteCommentButton" mnemonicParsing="false" onAction="#onDeleteCommentButtonClick" styleClass="ghost-action" text="删除评论" />
+                            </children>
+                        </HBox>
+                        <ListView fx:id="commentListView" styleClass="comment-list" VBox.vgrow="ALWAYS" />
+                        <Label text="发表评论" />
+                        <TextArea fx:id="commentArea" prefRowCount="4" promptText="留下你的评论、建议或补充说明" styleClass="comment-editor" wrapText="true" />
+                        <FlowPane alignment="CENTER_RIGHT">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#onCommentButtonClick" styleClass="primary-action" text="发布评论" />
+                            </children>
+                        </FlowPane>
+                    </VBox>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

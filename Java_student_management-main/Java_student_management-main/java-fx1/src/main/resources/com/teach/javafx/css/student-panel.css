@@ -1,0 +1,42 @@
+.student-form-grid {
+    -fx-hgap: 12;
+    -fx-vgap: 12;
+}
+
+.student-form-grid .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.student-form-control,
+.student-form-grid .text-field,
+.student-form-grid .combo-box,
+.student-form-grid .date-picker {
+    -fx-pref-height: 40;
+    -fx-min-height: 40;
+}
+
+.student-form-grid .combo-box,
+.student-form-grid .date-picker {
+    -fx-pref-width: 210;
+}
+
+.student-form-grid .combo-box .list-cell,
+.student-form-grid .date-picker .text-field {
+    -fx-padding: 8 12 8 12;
+}
+
+.student-form-grid .date-picker > .arrow-button,
+.student-form-grid .combo-box > .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.module-form-card {
+    -fx-padding: 18 18 18 18;
+}
+
+.module-photo-button {
+    -fx-pref-width: 116;
+    -fx-pref-height: 132;
+}

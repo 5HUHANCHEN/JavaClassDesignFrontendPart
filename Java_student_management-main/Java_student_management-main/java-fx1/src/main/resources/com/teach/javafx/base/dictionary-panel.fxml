@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teach.javafx.controller.base.DictionaryController" styleClass="module-root">
+    <top>
+        <VBox spacing="12.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="module-toolbar">
+                    <children>
+                        <VBox spacing="4.0">
+                            <children>
+                                <Label text="字典管理" styleClass="module-title" />
+                                <Label text="维护字典主键、值和标题，所有主题颜色统一跟随系统模式。" styleClass="module-subtitle" />
+                            </children>
+                        </VBox>
+                        <HBox HBox.hgrow="ALWAYS" />
+                        <FlowPane hgap="10.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#onAddButtonClick" styleClass="btn-primary" text="新增一行" />
+                                <Button mnemonicParsing="false" onAction="#onSaveButtonClick" styleClass="btn-secondary" text="修改保存" />
+                                <Button mnemonicParsing="false" onAction="#onDeleteButtonClick" styleClass="btn-danger" text="删除" />
+                            </children>
+                        </FlowPane>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="16.0" right="16.0" top="16.0" />
+            </padding>
+        </VBox>
+    </top>
+    <center>
+        <VBox styleClass="dictionary-table-card">
+            <children>
+                <TreeTableView fx:id="treeTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TreeTableColumn fx:id="idColumn" prefWidth="110.0" text="主键" />
+                        <TreeTableColumn fx:id="valueColumn" prefWidth="180.0" text="字典值" />
+                        <TreeTableColumn fx:id="titleColumn" prefWidth="260.0" text="字典名称" />
+                    </columns>
+                </TreeTableView>
+            </children>
+            <padding>
+                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+            </padding>
+        </VBox>
+    </center>
+</BorderPane>

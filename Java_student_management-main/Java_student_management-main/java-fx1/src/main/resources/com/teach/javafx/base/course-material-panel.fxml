@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teach.javafx.controller.CourseMaterialController">
+    <styleClass>
+        <String fx:value="module-root" />
+        <String fx:value="course-material-root" />
+    </styleClass>
+    <top>
+        <VBox spacing="10" styleClass="panel-header">
+            <padding>
+                <Insets top="18" right="20" bottom="12" left="20" />
+            </padding>
+            <Label styleClass="page-title" text="课程资料" />
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="课程" />
+                <ComboBox fx:id="filterCourseComboBox" prefWidth="220" />
+                <Label text="关键字" />
+                <TextField fx:id="keywordTextField" prefWidth="240" promptText="标题、文件名、上传人" />
+                <Button onAction="#onQueryButtonClick" styleClass="primary-button" text="查询" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.62" styleClass="content-split">
+            <items>
+                <VBox spacing="10" styleClass="table-pane">
+                    <TableView fx:id="materialTableView" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="courseColumn" prefWidth="120" text="课程" />
+                            <TableColumn fx:id="titleColumn" prefWidth="150" text="标题" />
+                            <TableColumn fx:id="fileNameColumn" prefWidth="160" text="文件名" />
+                            <TableColumn fx:id="fileTypeColumn" prefWidth="70" text="类型" />
+                            <TableColumn fx:id="fileSizeColumn" prefWidth="80" text="大小" />
+                            <TableColumn fx:id="uploaderColumn" prefWidth="100" text="上传人" />
+                            <TableColumn fx:id="uploadTimeColumn" prefWidth="150" text="上传时间" />
+                        </columns>
+                    </TableView>
+                </VBox>
+                <VBox spacing="12" styleClass="detail-pane">
+                    <Label styleClass="section-title" text="资料详情" />
+                    <GridPane hgap="10" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" minWidth="72" />
+                            <ColumnConstraints hgrow="ALWAYS" />
+                        </columnConstraints>
+                        <Label text="课程" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ComboBox fx:id="courseComboBox" prefWidth="260" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label text="标题" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="titleTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="说明" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextArea fx:id="descriptionTextArea" prefRowCount="5" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="文件名" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="fileNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="类型" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="fileTypeTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="大小" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <TextField fx:id="fileSizeTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="上传人" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <TextField fx:id="uploaderTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="上传时间" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <TextField fx:id="uploadTimeTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    </GridPane>
+                    <HBox spacing="8" styleClass="button-row">
+                        <Button fx:id="newButton" onAction="#onNewButtonClick" text="新增" />
+                        <Button fx:id="saveButton" onAction="#onSaveButtonClick" styleClass="primary-button" text="保存" />
+                        <Button fx:id="uploadButton" onAction="#onUploadButtonClick" text="上传文件" />
+                        <Button fx:id="downloadButton" onAction="#onDownloadButtonClick" text="下载" />
+                        <Button fx:id="deleteButton" onAction="#onDeleteButtonClick" styleClass="danger-button" text="删除" />
+                    </HBox>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="status-bar" text="请选择课程资料">
+            <padding>
+                <Insets top="8" right="16" bottom="8" left="16" />
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>

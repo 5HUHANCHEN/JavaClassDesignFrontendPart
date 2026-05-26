@@ -1,0 +1,12 @@
+.dictionary-table-card {
+    -fx-background-color: rgba(255, 255, 255, 0.88);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(226, 232, 240, 0.92);
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(148, 163, 184, 0.16), 18, 0.16, 0, 8);
+}
+
+.dark-mode .dictionary-table-card {
+    -fx-background-color: rgba(15, 23, 42, 0.82);
+    -fx-border-color: rgba(71, 85, 105, 0.86);
+}

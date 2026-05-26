@@ -1,0 +1,73 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam usecase {
+  BackgroundColor #F8FAFC
+  BorderColor #2563EB
+  ArrowColor #475569
+}
+
+title 教学管理系统后端用例图
+
+actor "管理员" as Admin
+actor "教师" as Teacher
+actor "学生" as Student
+actor "JavaFX 客户端" as Client
+actor "DeepSeek AI 服务" as AiProvider
+
+rectangle "教学管理后端 Spring Boot" {
+  usecase "登录认证" as UC_Login
+  usecase "查看菜单与字典" as UC_Base
+  usecase "维护学生信息" as UC_StudentManage
+  usecase "维护教师信息" as UC_TeacherManage
+  usecase "维护课程与课表" as UC_CourseManage
+  usecase "成绩管理" as UC_ScoreManage
+  usecase "请假申请" as UC_LeaveApply
+  usecase "请假审批" as UC_LeaveCheck
+  usecase "发布作业" as UC_HomeworkPublish
+  usecase "提交作业" as UC_HomeworkSubmit
+  usecase "批改作业" as UC_HomeworkGrade
+  usecase "社区发帖与评论" as UC_Community
+  usecase "统计分析" as UC_Statistics
+  usecase "上传头像/图片" as UC_Upload
+  usecase "注册申请审核" as UC_RegisterReview
+  usecase "AI 问答辅助" as UC_Ai
+}
+
+Client --> UC_Login
+Client --> UC_Base
+
+Admin --> UC_Login
+Teacher --> UC_Login
+Student --> UC_Login
+
+Admin --> UC_StudentManage
+Admin --> UC_TeacherManage
+Admin --> UC_CourseManage
+Admin --> UC_ScoreManage
+Admin --> UC_RegisterReview
+Admin --> UC_Statistics
+Admin --> UC_Base
+
+Teacher --> UC_CourseManage
+Teacher --> UC_ScoreManage
+Teacher --> UC_LeaveCheck
+Teacher --> UC_HomeworkPublish
+Teacher --> UC_HomeworkGrade
+Teacher --> UC_Community
+Teacher --> UC_Statistics
+
+Student --> UC_LeaveApply
+Student --> UC_HomeworkSubmit
+Student --> UC_Community
+Student --> UC_Upload
+Student --> UC_Ai
+Student --> UC_Base
+
+UC_HomeworkPublish .> UC_Upload : <<include>>
+UC_HomeworkSubmit .> UC_Upload : <<include>>
+UC_LeaveCheck .> UC_LeaveApply : <<extend>>
+UC_Ai --> AiProvider
+
+@enduml

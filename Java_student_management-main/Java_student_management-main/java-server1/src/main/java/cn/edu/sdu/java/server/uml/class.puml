@@ -1,0 +1,226 @@
+@startuml
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+  ArrowColor #475569
+}
+
+title 教学管理系统后端核心类图
+
+package "Controller 层" {
+  class AuthController
+  class BaseController
+  class StudentController
+  class TeacherController
+  class CourseController
+  class ScoreController
+  class StudentLeaveController
+  class HomeworkController
+  class CommunityController
+  class StatisticsController
+  class AiController
+}
+
+package "Service 层" {
+  class AuthService
+  class BaseService
+  class StudentService
+  class TeacherService
+  class CourseService
+  class CourseScheduleService
+  class ScoreService
+  class StudentLeaveService
+  class HomeworkService
+  class CommunityService
+  class StatisticsService
+  class JwtService
+  class AiService
+}
+
+package "Repository 层" {
+  interface UserRepository
+  interface PersonRepository
+  interface StudentRepository
+  interface TeacherRepository
+  interface CourseRepository
+  interface CourseScheduleRepository
+  interface ScoreRepository
+  interface StudentLeaveRepository
+  interface HomeworkAssignmentRepository
+  interface HomeworkSubmissionRepository
+  interface CommunityPostRepository
+  interface CommunityCommentRepository
+}
+
+package "实体模型" {
+  class Person {
+    +Integer personId
+    +String num
+    +String name
+    +String type
+    +String dept
+    +String gender
+    +String email
+    +String phone
+    +byte[] photo
+  }
+
+  class User {
+    +Integer personId
+    +String userName
+    +String password
+    +Integer loginCount
+    +String lastLoginTime
+  }
+
+  class UserType {
+    +Integer id
+    +String name
+  }
+
+  class Student {
+    +Integer personId
+    +String major
+    +String className
+  }
+
+  class Teacher {
+    +Integer personId
+    +String title
+    +String degree
+  }
+
+  class Course {
+    +Integer courseId
+    +String num
+    +String name
+    +Integer credit
+  }
+
+  class CourseSchedule {
+    +Integer scheduleId
+  }
+
+  class Score {
+    +Integer scoreId
+    +Integer mark
+    +Integer ranking
+  }
+
+  class StudentLeave {
+    +Integer studentLeaveId
+    +String leaveDate
+    +String reason
+    +Integer state
+    +String teacherComment
+    +String adminComment
+  }
+
+  class HomeworkAssignment {
+    +Integer homeworkId
+    +String title
+    +String dueDate
+    +Double totalScore
+    +byte[] imageData
+  }
+
+  class HomeworkSubmission {
+    +Integer submissionId
+    +String content
+    +Double grade
+    +String state
+    +byte[] imageData
+  }
+
+  class CommunityPost {
+    +Integer communityPostId
+    +String title
+    +String category
+    +String content
+  }
+
+  class CommunityComment {
+    +Integer communityCommentId
+  }
+}
+
+package "请求/响应对象" {
+  class LoginRequest {
+    +String username
+    +String password
+  }
+
+  class DataRequest
+  class DataResponse {
+    +Integer code
+    +Object data
+    +String msg
+  }
+
+  class JwtResponse {
+    +String token
+    +Integer id
+    +String username
+    +String perName
+    +String role
+  }
+}
+
+AuthController --> AuthService
+BaseController --> BaseService
+StudentController --> StudentService
+TeacherController --> TeacherService
+CourseController --> CourseService
+CourseController --> CourseScheduleService
+ScoreController --> ScoreService
+StudentLeaveController --> StudentLeaveService
+HomeworkController --> HomeworkService
+CommunityController --> CommunityService
+StatisticsController --> StatisticsService
+AiController --> AiService
+
+AuthService --> UserRepository
+AuthService --> PersonRepository
+AuthService --> StudentRepository
+AuthService --> TeacherRepository
+AuthService --> UserType
+AuthService --> JwtService
+BaseService --> UserRepository
+BaseService --> PersonRepository
+StudentService --> StudentRepository
+StudentService --> PersonRepository
+TeacherService --> TeacherRepository
+CourseService --> CourseRepository
+CourseScheduleService --> CourseScheduleRepository
+ScoreService --> ScoreRepository
+StudentLeaveService --> StudentLeaveRepository
+HomeworkService --> HomeworkAssignmentRepository
+HomeworkService --> HomeworkSubmissionRepository
+CommunityService --> CommunityPostRepository
+CommunityService --> CommunityCommentRepository
+
+User "1" -- "1" Person
+User "*" --> "1" UserType
+Student "1" -- "1" Person
+Teacher "1" -- "1" Person
+Course "0..1" --> "1" Course : preCourse
+Score "*" --> "1" Student
+Score "*" --> "1" Course
+StudentLeave "*" --> "1" Student
+StudentLeave "*" --> "1" Teacher
+HomeworkAssignment "*" --> "1" Teacher
+HomeworkSubmission "*" --> "1" HomeworkAssignment
+HomeworkSubmission "*" --> "1" Student
+CommunityPost "*" --> "1" Person : author
+CommunityComment "*" --> "1" CommunityPost
+CommunityComment "*" --> "1" Person : author
+
+AuthController ..> LoginRequest
+AuthController ..> JwtResponse
+StudentController ..> DataRequest
+StudentController ..> DataResponse
+
+@enduml

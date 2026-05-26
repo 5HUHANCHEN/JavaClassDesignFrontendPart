@@ -1,0 +1,141 @@
+.student-self-root {
+    -fx-background-color: #f4f7fb;
+    -fx-font-family: "Microsoft YaHei";
+}
+
+.self-top-wrapper {
+    -fx-background-color: transparent;
+}
+
+.self-header-card,
+.profile-card,
+.form-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #dbe4ef;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 14, 0.18, 0, 4);
+}
+
+.self-header-card {
+    -fx-padding: 18 22 18 22;
+}
+
+.profile-card {
+    -fx-alignment: TOP_CENTER;
+}
+
+.form-card {
+    -fx-padding: 4;
+}
+
+.self-page-title {
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.self-page-subtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+.section-title {
+    -fx-text-fill: #1d4ed8;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.profile-photo {
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.16), 10, 0.18, 0, 3);
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.profile-info-box {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 12;
+    -fx-padding: 16;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.info-label {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.info-value {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 13px;
+}
+
+.form-label {
+    -fx-text-fill: #475569;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.readonly-field,
+.editable-field,
+.editable-area,
+.date-picker {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+}
+
+.readonly-field,
+.date-picker {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #334155;
+    -fx-border-color: #dbe4ef;
+}
+
+.editable-field,
+.editable-area {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #0f172a;
+    -fx-border-color: #b7c8dc;
+}
+
+.editable-field:focused,
+.editable-area:focused {
+    -fx-border-color: #2563eb;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.20), 8, 0.25, 0, 0);
+}
+
+.text-area .content {
+    -fx-background-color: #ffffff;
+}
+
+.primary-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 22 10 22;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1d4ed8;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.28), 8, 0.25, 0, 2);
+}
+
+.button-bar {
+    -fx-padding: 10 0 0 0;
+}
+
+.status-hint {
+    -fx-text-fill: #2563eb;
+    -fx-font-size: 12px;
+}

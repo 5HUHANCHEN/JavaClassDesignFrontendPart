@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  data:
+    redis:
+      repositories:
+        enabled: false
+
+security:
+  jwt:
+    secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+    expiration-time: 86400000
+
+attach:
+  folder: ./target/test-attach/
+
+ai:
+  api-key: test-key
+  base-url: https://api.deepseek.com/v1
+  model: deepseek-chat

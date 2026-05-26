@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="760.0" prefWidth="1180.0" styleClass="module-root homework-root"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.teach.javafx.controller.HomeworkController">
+    <top>
+        <VBox spacing="12.0">
+            <padding>
+                <Insets bottom="10.0" left="16.0" right="16.0" top="16.0"/>
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="module-toolbar">
+                    <children>
+                        <VBox spacing="4.0">
+                            <children>
+                                <Label text="作业中心" styleClass="module-title"/>
+                                <Label text="教师发布作业、上传题图并评分；学生查看任务、提交图片和说明。" styleClass="module-subtitle"/>
+                            </children>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="keywordField" prefWidth="220.0" promptText="搜索标题或说明" styleClass="module-input"/>
+                        <Button text="查询" onAction="#onQueryButtonClick" styleClass="btn-primary"/>
+                    </children>
+                </HBox>
+                <HBox spacing="8.0" styleClass="module-status-bar">
+                    <children>
+                        <Label text="状态：" styleClass="module-status-label"/>
+                        <Label fx:id="statusLabel" text="准备就绪" styleClass="module-status-text"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.44">
+            <items>
+                <VBox spacing="12.0" styleClass="module-content-card">
+                    <padding>
+                        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0"/>
+                    </padding>
+                    <children>
+                        <TableView fx:id="homeworkTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="titleColumn" prefWidth="150.0" text="作业"/>
+                                <TableColumn fx:id="dueDateColumn" prefWidth="105.0" text="截止日期"/>
+                                <TableColumn fx:id="totalScoreColumn" prefWidth="70.0" text="分值"/>
+                                <TableColumn fx:id="teacherNameColumn" prefWidth="90.0" text="发布人"/>
+                                <TableColumn fx:id="submitStateColumn" prefWidth="80.0" text="提交"/>
+                                <TableColumn fx:id="myGradeColumn" prefWidth="70.0" text="得分"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <VBox spacing="12.0">
+                    <padding>
+                        <Insets bottom="0.0" left="12.0" right="16.0" top="0.0"/>
+                    </padding>
+                    <children>
+                        <VBox fx:id="publishPane" spacing="10.0" styleClass="module-content-card">
+                            <padding>
+                                <Insets bottom="14.0" left="14.0" right="14.0" top="14.0"/>
+                            </padding>
+                            <children>
+                                <Label text="发布作业" styleClass="section-title"/>
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <TextField fx:id="titleField" promptText="作业标题" HBox.hgrow="ALWAYS"/>
+                                        <TextField fx:id="dueDateField" prefWidth="120.0" promptText="截止日期"/>
+                                        <TextField fx:id="totalScoreField" prefWidth="80.0" promptText="分值"/>
+                                    </children>
+                                </HBox>
+                                <TextArea fx:id="descriptionArea" prefRowCount="3" promptText="作业说明、要求、评分标准"/>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                                    <children>
+                                        <Button text="新建" onAction="#onNewHomeworkButtonClick" styleClass="btn-secondary"/>
+                                        <Button fx:id="saveHomeworkButton" text="保存作业" onAction="#onSaveHomeworkButtonClick" styleClass="btn-primary"/>
+                                        <Button fx:id="uploadHomeworkImageButton" text="上传题图" onAction="#onUploadHomeworkImageButtonClick" styleClass="btn-secondary"/>
+                                        <Button fx:id="deleteHomeworkButton" text="删除" onAction="#onDeleteHomeworkButtonClick" styleClass="btn-danger"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <VBox fx:id="submitPane" spacing="10.0" styleClass="module-content-card">
+                            <padding>
+                                <Insets bottom="14.0" left="14.0" right="14.0" top="14.0"/>
+                            </padding>
+                            <children>
+                                <Label text="提交作业" styleClass="section-title"/>
+                                <TextArea fx:id="contentArea" prefRowCount="4" promptText="提交说明、答案摘要或补充说明"/>
+                                <FlowPane hgap="10.0">
+                                    <children>
+                                        <Button fx:id="submitHomeworkButton" text="提交文字" onAction="#onSubmitHomeworkButtonClick" styleClass="btn-primary"/>
+                                        <Button fx:id="uploadSubmissionImageButton" text="上传提交图片" onAction="#onUploadSubmissionImageButtonClick" styleClass="btn-secondary"/>
+                                    </children>
+                                </FlowPane>
+                            </children>
+                        </VBox>
+
+                        <HBox spacing="12.0">
+                            <children>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="image-card">
+                                    <children>
+                                        <Label text="作业题图" styleClass="section-title"/>
+                                        <ImageView fx:id="homeworkImageView" fitHeight="180.0" preserveRatio="true" smooth="true"/>
+                                    </children>
+                                </VBox>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="image-card">
+                                    <children>
+                                        <Label text="提交图片" styleClass="section-title"/>
+                                        <ImageView fx:id="submissionImageView" fitHeight="180.0" preserveRatio="true" smooth="true"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <VBox fx:id="gradePane" spacing="10.0" styleClass="module-content-card" VBox.vgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="14.0" left="14.0" right="14.0" top="14.0"/>
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <Label text="学生提交" styleClass="section-title"/>
+                                        <Pane HBox.hgrow="ALWAYS"/>
+                                        <TextField fx:id="submissionKeywordField" prefWidth="180.0" promptText="学生 / 作业"/>
+                                        <Button text="查询提交" onAction="#onQuerySubmissionButtonClick" styleClass="btn-secondary"/>
+                                    </children>
+                                </HBox>
+                                <TableView fx:id="submissionTable" prefHeight="190.0" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="submissionTitleColumn" prefWidth="130.0" text="作业"/>
+                                        <TableColumn fx:id="studentNumColumn" prefWidth="100.0" text="学号"/>
+                                        <TableColumn fx:id="studentNameColumn" prefWidth="80.0" text="姓名"/>
+                                        <TableColumn fx:id="submitTimeColumn" prefWidth="135.0" text="提交时间"/>
+                                        <TableColumn fx:id="stateNameColumn" prefWidth="75.0" text="状态"/>
+                                        <TableColumn fx:id="gradeColumn" prefWidth="65.0" text="分数"/>
+                                    </columns>
+                                </TableView>
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <TextField fx:id="gradeField" prefWidth="90.0" promptText="分数"/>
+                                        <TextArea fx:id="teacherCommentArea" prefRowCount="2" promptText="评语" HBox.hgrow="ALWAYS"/>
+                                        <Button fx:id="gradeButton" text="保存评分" onAction="#onGradeButtonClick" styleClass="btn-primary"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

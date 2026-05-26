@@ -1,0 +1,111 @@
+.entertainment-root {
+    -fx-background-color: #f6f8fb;
+}
+
+.entertainment-header,
+.entertainment-status {
+    -fx-background-color: rgba(255, 255, 255, 0.94);
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+}
+
+.entertainment-scroll {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.entertainment-content {
+    -fx-background-color: transparent;
+}
+
+.entertainment-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8;
+    -fx-padding: 14;
+    -fx-min-width: 300;
+}
+
+.card-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.highlight-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1d4ed8;
+}
+
+.quote-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.muted-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.link-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #2563eb;
+}
+
+.entertainment-list-row {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 7;
+    -fx-padding: 7 8;
+}
+
+.mini-link-button {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #bfdbfe;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+    -fx-text-fill: #1d4ed8;
+    -fx-padding: 4 9;
+}
+
+.entertainment-status {
+    -fx-border-color: #e5e7eb transparent transparent transparent;
+    -fx-text-fill: #64748b;
+}
+
+.dark-mode .entertainment-root {
+    -fx-background-color: #111827;
+}
+
+.dark-mode .entertainment-header,
+.dark-mode .entertainment-status,
+.dark-mode .entertainment-card {
+    -fx-background-color: #1f2937;
+    -fx-border-color: #374151;
+}
+
+.dark-mode .card-title,
+.dark-mode .quote-label {
+    -fx-text-fill: #f9fafb;
+}
+
+.dark-mode .highlight-title,
+.dark-mode .link-label {
+    -fx-text-fill: #93c5fd;
+}
+
+.dark-mode .muted-label,
+.dark-mode .entertainment-status {
+    -fx-text-fill: #cbd5e1;
+}
+
+.dark-mode .entertainment-list-row {
+    -fx-background-color: #111827;
+}
+
+.dark-mode .mini-link-button {
+    -fx-background-color: #1e3a8a;
+    -fx-border-color: #2563eb;
+    -fx-text-fill: #dbeafe;
+}

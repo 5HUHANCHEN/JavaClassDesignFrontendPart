@@ -1,0 +1,60 @@
+.root-pane {
+    -fx-background-color: transparent;
+}
+
+.top-wrapper {
+    -fx-background-color: transparent;
+}
+
+.header-card,
+.toolbar-card,
+.status-card,
+.table-wrapper {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.page-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.small-label,
+.query-label,
+.status-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.query-field {
+    -fx-pref-height: 40;
+}
+
+.teacher-table {
+    -fx-background-color: transparent;
+}
+
+.teacher-table .table-row-cell {
+    -fx-background-color: rgba(255, 255, 255, 0.80);
+}
+
+.dark-mode .page-title {
+    -fx-text-fill: #e2e8f0;
+}
+
+.dark-mode .page-subtitle,
+.dark-mode .small-label,
+.dark-mode .query-label,
+.dark-mode .status-title {
+    -fx-text-fill: #94a3b8;
+}
+
+.dark-mode .teacher-table .table-row-cell {
+    -fx-background-color: rgba(15, 23, 42, 0.70);
+}

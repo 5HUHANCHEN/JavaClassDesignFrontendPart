@@ -1,0 +1,32 @@
+.menu-tree-card,
+.menu-editor-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.88);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(226, 232, 240, 0.92);
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(148, 163, 184, 0.16), 18, 0.16, 0, 8);
+}
+
+.menu-editor-pane {
+    -fx-padding: 18;
+}
+
+.role-box {
+    -fx-spacing: 12;
+}
+
+.role-box .check-box {
+    -fx-padding: 8 12 8 12;
+    -fx-background-color: rgba(239, 246, 255, 0.82);
+    -fx-background-radius: 14;
+}
+
+.dark-mode .menu-tree-card,
+.dark-mode .menu-editor-pane {
+    -fx-background-color: rgba(15, 23, 42, 0.82);
+    -fx-border-color: rgba(71, 85, 105, 0.86);
+}
+
+.dark-mode .role-box .check-box {
+    -fx-background-color: rgba(30, 41, 59, 0.92);
+}

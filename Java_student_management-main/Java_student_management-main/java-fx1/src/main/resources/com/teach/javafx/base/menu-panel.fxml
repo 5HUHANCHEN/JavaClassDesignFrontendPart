@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teach.javafx.controller.base.MenuController" styleClass="module-root">
+   <top>
+       <VBox spacing="12.0">
+           <children>
+               <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="module-toolbar">
+                   <children>
+                       <VBox spacing="4.0">
+                           <children>
+                               <Label text="菜单管理" styleClass="module-title" />
+                               <Label text="维护层级菜单、标题和可见角色，统一跟随系统深浅模式。" styleClass="module-subtitle" />
+                           </children>
+                       </VBox>
+                       <HBox HBox.hgrow="ALWAYS" />
+                       <Button mnemonicParsing="false" onAction="#onAddRootButtonClick" styleClass="btn-primary" text="新增一级菜单" />
+                   </children>
+               </HBox>
+           </children>
+           <padding>
+               <Insets bottom="10.0" left="16.0" right="16.0" top="16.0" />
+           </padding>
+       </VBox>
+   </top>
+   <center>
+       <SplitPane dividerPositions="0.33">
+           <items>
+               <VBox styleClass="menu-tree-card">
+                   <children>
+                       <TreeView fx:id="menuTreeView" VBox.vgrow="ALWAYS" />
+                   </children>
+                   <padding>
+                       <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                   </padding>
+               </VBox>
+               <VBox alignment="TOP_CENTER" spacing="18.0" styleClass="menu-editor-pane">
+                   <children>
+                       <Label text="当前节点信息" styleClass="module-section-title" />
+                       <GridPane hgap="12.0" vgap="12.0">
+                           <columnConstraints>
+                               <ColumnConstraints halignment="RIGHT" prefWidth="88.0" />
+                               <ColumnConstraints hgrow="ALWAYS" />
+                           </columnConstraints>
+                           <rowConstraints>
+                               <RowConstraints prefHeight="34.0" />
+                               <RowConstraints prefHeight="34.0" />
+                               <RowConstraints prefHeight="34.0" />
+                               <RowConstraints prefHeight="34.0" />
+                               <RowConstraints prefHeight="42.0" />
+                           </rowConstraints>
+                           <children>
+                               <Label text="父节点" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                               <Label fx:id="nodeParentLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                               <Label text="主键 ID" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                               <TextField fx:id="nodeIdField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                               <Label text="菜单名称" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                               <TextField fx:id="nodeNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                               <Label text="菜单标题" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                               <TextField fx:id="nodeTitleField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                               <Label text="可见角色" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                               <HBox GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="role-box">
+                                   <children>
+                                       <CheckBox fx:id="nodeAdminCheckBox" mnemonicParsing="false" text="管理员" />
+                                       <CheckBox fx:id="nodeStudentCheckBox" mnemonicParsing="false" text="学生" />
+                                       <CheckBox fx:id="nodeTeacherCheckBox" mnemonicParsing="false" text="教师" />
+                                   </children>
+                               </HBox>
+                           </children>
+                       </GridPane>
+                       <FlowPane alignment="CENTER">
+                           <children>
+                               <Button onAction="#onSubmitButtonClick" styleClass="btn-primary" text="保存菜单" />
+                           </children>
+                       </FlowPane>
+                   </children>
+                   <padding>
+                       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                   </padding>
+               </VBox>
+           </items>
+       </SplitPane>
+   </center>
+</BorderPane>

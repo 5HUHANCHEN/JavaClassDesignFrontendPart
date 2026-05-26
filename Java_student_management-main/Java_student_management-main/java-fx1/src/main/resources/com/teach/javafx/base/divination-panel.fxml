@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teach.javafx.controller.DivinationController">
+    <styleClass>
+        <String fx:value="module-root" />
+        <String fx:value="divination-root" />
+    </styleClass>
+    <top>
+        <VBox spacing="6" styleClass="divination-header">
+            <padding>
+                <Insets top="18" right="22" bottom="12" left="22" />
+            </padding>
+            <Label styleClass="module-title" text="易学与塔罗指南" />
+            <Label styleClass="module-subtitle" text="用于周易课程学习、象征分析和自我反思。报告仅作文化学习参考，不作为绝对预测或重大决策依据。" wrapText="true" />
+        </VBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" styleClass="divination-tabs">
+            <Tab text="梅花易数">
+                <SplitPane dividerPositions="0.36">
+                    <VBox spacing="12" styleClass="divination-form">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16" />
+                        </padding>
+                        <Label styleClass="module-section-title" text="占问信息" />
+                        <TextField fx:id="plumQuestionField" promptText="占问主题" />
+                        <TextArea fx:id="plumBackgroundArea" prefRowCount="6" promptText="背景描述" wrapText="true" />
+                        <ComboBox fx:id="plumMethodComboBox" prefWidth="220" />
+                        <TextField fx:id="plumInputField" promptText="数字或文字起卦材料，可留空" />
+                        <CheckBox fx:id="plumStudyCheckBox" selected="true" text="报告中加入学习说明" />
+                        <Button onAction="#onGeneratePlumClick" styleClass="btn-primary" text="生成梅花易数报告" />
+                        <Label fx:id="plumSummaryLabel" styleClass="divination-summary" text="尚未生成报告" wrapText="true" />
+                    </VBox>
+                    <VBox spacing="10" styleClass="divination-report-box">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16" />
+                        </padding>
+                        <Label styleClass="module-section-title" text="详细指南报告" />
+                        <TextArea fx:id="plumReportArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+            <Tab text="塔罗牌阵">
+                <SplitPane dividerPositions="0.36">
+                    <VBox spacing="12" styleClass="divination-form">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16" />
+                        </padding>
+                        <Label styleClass="module-section-title" text="问题与牌阵" />
+                        <TextField fx:id="tarotQuestionField" promptText="问题主题" />
+                        <TextArea fx:id="tarotBackgroundArea" prefRowCount="7" promptText="背景描述" wrapText="true" />
+                        <ComboBox fx:id="tarotSpreadComboBox" prefWidth="220" />
+                        <Button onAction="#onGenerateTarotClick" styleClass="btn-primary" text="生成塔罗指南报告" />
+                        <Label fx:id="tarotSummaryLabel" styleClass="divination-summary" text="尚未生成报告" wrapText="true" />
+                    </VBox>
+                    <VBox spacing="10" styleClass="divination-report-box">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16" />
+                        </padding>
+                        <Label styleClass="module-section-title" text="详细指南报告" />
+                        <TextArea fx:id="tarotReportArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                    </VBox>
+                </SplitPane>
+            </Tab>
+            <Tab text="历史报告">
+                <SplitPane dividerPositions="0.34">
+                    <VBox spacing="10" styleClass="divination-form">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16" />
+                        </padding>
+                        <HBox spacing="8">
+                            <Button onAction="#onHistoryRefreshClick" styleClass="btn-secondary" text="刷新" />
+                            <Button onAction="#onHistoryOpenClick" styleClass="btn-primary" text="查看" />
+                            <Button onAction="#onHistoryDeleteClick" styleClass="btn-danger" text="删除" />
+                        </HBox>
+                        <ListView fx:id="historyListView" VBox.vgrow="ALWAYS" />
+                    </VBox>
+                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+                        <content>
+                            <VBox spacing="10" styleClass="divination-report-box">
+                                <padding>
+                                    <Insets top="16" right="16" bottom="16" left="16" />
+                                </padding>
+                                <Label styleClass="module-section-title" text="历史报告正文" />
+                                <TextArea fx:id="historyReportArea" editable="false" prefRowCount="24" wrapText="true" VBox.vgrow="ALWAYS" />
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                </SplitPane>
+            </Tab>
+        </TabPane>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="divination-status" text="易学与塔罗指南准备就绪">
+            <padding>
+                <Insets top="8" right="16" bottom="8" left="16" />
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>

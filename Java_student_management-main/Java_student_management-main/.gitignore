@@ -1,0 +1,33 @@
+# IDEA
+.idea/
+**/.idea/
+*.iml
+
+# Maven / build
+target/
+**/target/
+out/
+**/out/
+
+# Logs
+logs/
+**/logs/
+*.log
+
+# Temp
+tmp/
+**/tmp/
+
+# Package / dist
+dist/
+**/dist/
+*.zip
+
+# Java compiled
+*.class
+*.jar
+
+
+# OS
+Thumbs.db
+.DS_Store
