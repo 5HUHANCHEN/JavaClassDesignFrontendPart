@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teach.javafx.controller.InnovationPracticeController" styleClass="module-root">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="module-toolbar">
+            <VBox spacing="4.0">
+                <Label fx:id="pageTitleLabel" styleClass="module-title" />
+                <Label fx:id="pageSubtitleLabel" styleClass="module-subtitle" wrapText="true" />
+            </VBox>
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField fx:id="searchTextField" prefWidth="240.0" />
+            <Button fx:id="queryButton" onAction="#onQueryButtonClick" styleClass="button btn-secondary" text="查询" />
+            <Button fx:id="addButton" onAction="#onAddButtonClick" styleClass="button btn-secondary" text="新增" />
+            <Button fx:id="saveButton" onAction="#onSaveButtonClick" styleClass="button btn-primary" text="保存" />
+            <Button fx:id="deleteButton" onAction="#onDeleteButtonClick" styleClass="button btn-danger" text="删除" />
+        </HBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.62">
+            <items>
+                <VBox spacing="10.0" styleClass="module-content-card">
+                    <Label styleClass="module-section-title" text="记录列表" />
+                    <TableView fx:id="dataTableView" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="studentNumColumn" prefWidth="92.0" text="学号" />
+                            <TableColumn fx:id="studentNameColumn" prefWidth="78.0" text="姓名" />
+                            <TableColumn fx:id="itemTypeColumn" prefWidth="110.0" text="类型" />
+                            <TableColumn fx:id="titleColumn" prefWidth="150.0" text="标题" />
+                            <TableColumn fx:id="levelColumn" prefWidth="100.0" text="级别" />
+                            <TableColumn fx:id="dateRangeColumn" prefWidth="150.0" text="时间" />
+                            <TableColumn fx:id="organizationColumn" prefWidth="150.0" text="单位" />
+                            <TableColumn fx:id="resultColumn" prefWidth="130.0" text="成果" />
+                        </columns>
+                    </TableView>
+                </VBox>
+                <ScrollPane fitToWidth="true" pannable="true">
+                    <content>
+                        <VBox spacing="12.0" styleClass="module-form-card">
+                            <Label styleClass="module-section-title" text="记录详情" />
+                            <HBox fx:id="typeManageBox" alignment="CENTER_LEFT" spacing="8.0">
+                                <Label styleClass="module-label" text="类型维护" />
+                                <ComboBox fx:id="typeManageComboBox" prefWidth="160.0" />
+                                <TextField fx:id="typeManageField" promptText="输入类型名称" />
+                                <Button fx:id="typeAddButton" onAction="#onTypeAddButtonClick" styleClass="button btn-secondary" text="新增类型" />
+                                <Button fx:id="typeSaveButton" onAction="#onTypeSaveButtonClick" styleClass="button btn-primary" text="保存类型" />
+                                <Button fx:id="typeDeleteButton" onAction="#onTypeDeleteButtonClick" styleClass="button btn-danger" text="删除类型" />
+                            </HBox>
+                            <GridPane hgap="10.0" vgap="10.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" minWidth="96.0" prefWidth="108.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="150.0" prefWidth="220.0" />
+                                </columnConstraints>
+                                <Label fx:id="studentSelectLabel" styleClass="module-label" text="选择学生" GridPane.rowIndex="0" />
+                                <ComboBox fx:id="studentComboBox" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <Label styleClass="module-label" text="学号" GridPane.rowIndex="1" />
+                                <TextField fx:id="studentNumField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label styleClass="module-label" text="姓名" GridPane.rowIndex="2" />
+                                <TextField fx:id="studentNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label fx:id="itemTypeLabel" styleClass="module-label" text="类型" GridPane.rowIndex="3" />
+                                <ComboBox fx:id="itemTypeComboBox" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label fx:id="titleFieldLabel" styleClass="module-label" text="标题" GridPane.rowIndex="4" />
+                                <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label fx:id="levelLabel" styleClass="module-label" text="级别" GridPane.rowIndex="5" />
+                                <TextField fx:id="levelField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                <Label fx:id="organizationLabel" styleClass="module-label" text="单位" GridPane.rowIndex="6" />
+                                <TextField fx:id="organizationField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                <Label fx:id="startDateLabel" styleClass="module-label" text="开始日期" GridPane.rowIndex="7" />
+                                <DatePicker fx:id="startDatePicker" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <Label fx:id="endDateLabel" styleClass="module-label" text="结束日期" GridPane.rowIndex="8" />
+                                <DatePicker fx:id="endDatePicker" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                <Label fx:id="placeLabel" styleClass="module-label" text="地点" GridPane.rowIndex="9" />
+                                <TextField fx:id="placeField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                <Label fx:id="resultLabel" styleClass="module-label" text="成果" GridPane.rowIndex="10" />
+                                <TextField fx:id="resultField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                            </GridPane>
+                            <VBox spacing="8.0">
+                                <Label fx:id="descriptionLabel" styleClass="module-label" text="详细描述" />
+                                <TextArea fx:id="descriptionArea" prefRowCount="6" wrapText="true" />
+                            </VBox>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>
